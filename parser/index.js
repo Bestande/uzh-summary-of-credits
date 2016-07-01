@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 var fs = require('fs');
 var cheerio = require('cheerio');
 var _ = require('underscore');
@@ -20,9 +20,9 @@ var getStatus = function (d) {
 	else {
 		return 'UNKNOWN';
 	}
-}
+};
 
-exports.groupBySemester = function(rows) {
+exports.groupBySemester = function (rows) {
 	rows = _.groupBy(rows, (row) => {
 		var ay = row.link.match(/.ch\/((HS|FS)[0-9]+)/);
 		return ay[1];
@@ -31,10 +31,10 @@ exports.groupBySemester = function(rows) {
 		return {
 			semester: key,
 			credits: row
-		}
+		};
 	});
-	return _.sortBy(rows, (row) => (0 - parseInt(row.semester.replace(/[^\d.]/g, "")) + row.semester)).reverse();
-}
+	return _.sortBy(rows, (row) => (0 - parseInt(row.semester.replace(/[^\d.]/g, '')) + row.semester)).reverse();
+};
 
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
@@ -42,11 +42,11 @@ exports.fromHTML = function (html) {
 	rows = _.map(rows, function (row) {
 		if (row.type === 'tag' && row.name === 'tr' && row.children[0].name && row.children[2].children[0].children) {
 			var grade;
-			try  {
+			try {
 				grade = $(row.children[9].children[0]).text().trim();
 			}
 			catch (e) {
-				grade = "BEST";
+				grade = 'BEST';
 			}
 			return {
 				module: $(row.children[0].children[0]).text().trim(),
@@ -57,9 +57,9 @@ exports.fromHTML = function (html) {
 				status: getStatus(row.children[5].children[0]),
 				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
 				grade: grade
-			}
+			};
 		}
 	});
 	rows = _.compact(rows);
 	return rows;
-}
+};

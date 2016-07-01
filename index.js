@@ -17,7 +17,7 @@ module.exports = function (username, password) {
 				throw new Error('NO_PASSWORD');
 			}
 			let result = yield scraper.get(username, password);
-			let credits = parser.fromHTML(result.html)
+			let credits = parser.fromHTML(result.html);
 			let stats = statsCalculator.calculate(credits);
 			let directions = personal.getStudyDirection(result.html);
 			credits = yield listing.addPaths(credits, directions);
@@ -29,7 +29,7 @@ module.exports = function (username, password) {
 				categories,
 				success: true,
 				version: 2
-			})
+			});
 		})
 		.catch(reject);
 	});

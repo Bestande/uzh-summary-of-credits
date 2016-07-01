@@ -22,4 +22,4 @@ db.serialize(function () {
 	`);
 });
 
-db.close()
+db.close();

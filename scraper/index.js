@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const config = require('./const.js');
 var status = require('./status.js');
@@ -17,8 +17,8 @@ let first_request = function (jar) {
 			url: config.AUTH_URL,
 			jar: jar
 		}, function (err, response, body) {
-			if (body.indexOf("You don't have permission to access the requested object") > -1) {
-				return reject(new Error('Status 1. Juli: Wir haben Probleme, uns mit dem UZH-Server zu verbinden. Wir versuchen das Problem so schnell wie möglich zu beheben.'))
+			if (body.indexOf('You don\'t have permission to access the requested object') > -1) {
+				return reject(new Error('Status 1. Juli: Wir haben Probleme, uns mit dem UZH-Server zu verbinden. Wir versuchen das Problem so schnell wie möglich zu beheben.'));
 			}
 			var url = body.match(/action=\"(.*?)\"/);
 			if (!err) { resolve(url[1]); }
@@ -27,7 +27,7 @@ let first_request = function (jar) {
 			}
 		});
 	});
-}
+};
 
 let second_request = function (jar, username, password, url) {
 	return new Promise(function (resolve, reject) {
@@ -51,13 +51,13 @@ let second_request = function (jar, username, password, url) {
 			else { reject(err); }
 		});
 	});
-}
+};
 
 let third_request = function (body, jar) {
 	return new Promise(function (resolve, reject) {
-		let _$ = cheerio.load(body)
-		let _action = _$('form')[0].attribs.action
-		let _data = {}
+		let _$ = cheerio.load(body);
+		let _action = _$('form')[0].attribs.action;
+		let _data = {};
 		_.each(_$('form input'), function (_input) {
 			if (!_input.attribs.name) return;
 			if (_input.attribs.name == '_eventId_AttributeReleaseRejected') return;
@@ -66,14 +66,14 @@ let third_request = function (body, jar) {
 				_data[_input.attribs.name] = [_data[_input.attribs.name], _input.attribs.value];
 			}
 			else if (_.isArray(_data[_input.attribs.name])) {
-				_data[_input.attribs.name].push(_input.attribs.value)
+				_data[_input.attribs.name].push(_input.attribs.value);
 			}
 			else {
-				_data[_input.attribs.name] = _input.attribs.value
+				_data[_input.attribs.name] = _input.attribs.value;
 			}
 		});
 		request.post({
-			url: "https://aai-idp.uzh.ch" + _action,
+			url: 'https://aai-idp.uzh.ch' + _action,
 			form: qs.stringify(_data, {indices: false}),
 			jar: jar,
 			followAllRedirects: true,
@@ -81,13 +81,13 @@ let third_request = function (body, jar) {
 				'User-Agent': config.USER_AGENT
 			}
 		}, function (err, response, body) {
-			if (err) { reject(err) }
+			if (err) { reject(err); }
 			else {
 				resolve(body);
 			}
 		});
-	})
-}
+	});
+};
 
 let fourth_request = function (body, jar) {
 	let $ = cheerio.load(body);
@@ -96,7 +96,7 @@ let fourth_request = function (body, jar) {
 		var data = {};
 		_.map($('form input'), function (input) {
 			if (!input.attribs.name) return;
-			data[input.attribs.name] = input.attribs.value
+			data[input.attribs.name] = input.attribs.value;
 		});
 		request.post({
 			url: $('form')[0].attribs.action,
@@ -113,7 +113,7 @@ let fourth_request = function (body, jar) {
 			}
 		});
 	});
-}
+};
 
 exports.get = (username, password) => {
 	return new Promise(function (resolve, reject) {
@@ -124,10 +124,10 @@ exports.get = (username, password) => {
 		})
 		.then(function (body) {
 			if (status.loginFailed(body)) {
-				reject(new Error('USERNAME_PW_WRONG'))
+				reject(new Error('USERNAME_PW_WRONG'));
 			}
 			if (status.usernameUnknown(body)) {
-				reject(new Error('USERNAME_UNKNOWN'))
+				reject(new Error('USERNAME_UNKNOWN'));
 			}
 			return third_request(body, j);
 		})
@@ -143,5 +143,5 @@ exports.get = (username, password) => {
 		.catch(function (err) {
 			reject(err);
 		});
-	})
-}
+	});
+};

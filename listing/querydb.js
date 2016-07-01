@@ -14,7 +14,7 @@ exports.getSequencesForIds = (ids) => {
 				reject(err);
 			}
 			else {
-				results.push(maps)
+				results.push(maps);
 			}
 		}, (err) => {
 			if (err) { reject(err); }
@@ -23,7 +23,7 @@ exports.getSequencesForIds = (ids) => {
 			}
 		});
 	});
-}
+};
 
 exports.getCategoriesForIds = (ids) => {
 	var results = {};
@@ -45,5 +45,5 @@ exports.getCategoriesForIds = (ids) => {
 				resolve(results);
 			}
 		});
-	})
-}
+	});
+};
