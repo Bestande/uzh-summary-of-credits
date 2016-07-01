@@ -1,0 +1,3 @@
+node_modules
+listing/data
+!listing/data/info.db

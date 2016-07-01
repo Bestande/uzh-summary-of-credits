@@ -1,0 +1,36 @@
+{
+  "name": "uzh-summary-of-credits",
+  "version": "0.0.0",
+  "description": "My incredible module",
+  "license": "MIT",
+  "repository": "JonnyBurger/uzh-summary-of-credits",
+  "author": {
+    "name": "Jonny Burger",
+    "email": "jonathanburger11@gmail.com",
+    "url": "jonny.io"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "xo && ava"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "@jonny/uzh-course-shortname": "^1.0.10",
+    "cheerio": "^0.20.0",
+    "co": "^4.6.0",
+    "request": "^2.72.0",
+    "sqlite3": "^3.1.4",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "ava": "^0.15.1",
+    "xo": "^0.15.0"
+  }
+}
