@@ -15,9 +15,6 @@
   "scripts": {
     "test": "xo --fix && ava"
   },
-  "files": [
-    "index.js"
-  ],
   "keywords": [
     "Leistungsübersicht",
     "uzh",
