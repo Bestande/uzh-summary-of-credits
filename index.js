@@ -15,7 +15,7 @@ module.exports = function (username, password, fetch) {
 			if (!password) {
 				throw new Error('NO_PASSWORD');
 			}
-			let result = yield scraper.get(username, password);
+			let result = yield scraper.get(username, password, fetch);
 			let credits = parser.fromHTML(result.html);
 			let stats = statsCalculator.calculate(credits);
 			let directions = personal.getStudyDirection(result.html);
