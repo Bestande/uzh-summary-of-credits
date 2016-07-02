@@ -7,7 +7,7 @@ var personal = require('./personal');
 var parser = require('./parser');
 var listing = require('./listing');
 
-module.exports = function (username, password) {
+module.exports = function (username, password, fetch) {
 	return new Promise((resolve, reject) => {
 		co(function *() {
 			if (!username) {

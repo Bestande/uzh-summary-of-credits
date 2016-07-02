@@ -4,9 +4,6 @@ const config = require('./const.js');
 var status = require('./status.js');
 var qs = require('qs');
 
-if (!fetch) {
-	var fetch = require('node-fetch');
-}
 let fetchCookie = require('fetch-cookie');
 let cheerio = require('cheerio');
 let FormData = require('form-data');
@@ -134,7 +131,7 @@ let fourth_request = function (body, fetchInstance) {
 	});
 };
 
-exports.get = (username, password) => {
+exports.get = (username, password, fetch) => {
 	return new Promise(function (resolve, reject) {
 		let fetchInstance = fetchCookie(fetch);
 		first_request(fetchInstance)
