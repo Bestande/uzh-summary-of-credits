@@ -5,7 +5,7 @@ var async = require('async');
 var request = require('request');
 var _ = require('underscore');
 var fs = require('fs');
-var cheerio = require('cheerio');
+var cheerio = require('cheerio-without-node-native');
 var url = require('url');
 let query = process.argv[2];
 

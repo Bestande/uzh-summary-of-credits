@@ -2,7 +2,7 @@
 
 var request = require('request');
 var Promise = require('bluebird');
-var cheerio = require('cheerio');
+var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 var url = require('url');
 var async = require('async');

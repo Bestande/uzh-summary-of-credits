@@ -9,7 +9,7 @@ const END_INDICATOR_NAME = '<!-- [               Matrikelnummer';
 const START_INDICATOR_MATRICULATE_NO = '<!-- [               Matrikelnummer';
 const END_INDICATOR_MATRICULATE_NO = '<!-- [               END INCLUDE';
 
-var cheerio = require('cheerio');
+var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 
 exports.getStudyDirection = function (html) {

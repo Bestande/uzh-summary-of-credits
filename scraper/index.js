@@ -5,7 +5,7 @@ var status = require('./status.js');
 var qs = require('qs');
 
 let fetchCookie = require('fetch-cookie');
-let cheerio = require('cheerio');
+let cheerio = require('cheerio-without-node-native');
 let FormData = require('form-data');
 
 

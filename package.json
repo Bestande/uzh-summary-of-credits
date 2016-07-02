@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@jonny/uzh-course-shortname": "^1.0.10",
-    "cheerio": "^0.20.0",
+    "cheerio-without-node-native": "^0.20.0",
     "co": "^4.6.0",
     "fetch-cookie": "^0.1.2",
     "form-data": "^1.0.0-rc4",
