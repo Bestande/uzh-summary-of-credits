@@ -38,13 +38,6 @@ let first_request = function (fetchInstance) {
 
 let second_request = function (fetchInstance, username, password, url) {
 	return new Promise(function (resolve, reject) {
-		console.log('https://aai-idp.uzh.ch' + url)
-		console.log(qs.stringify({
-				'j_username': username,
-				'j_password': password,
-				'_eventId_proceed': '',
-				'_shib_idp_revokeConsent': 'true'
-			}))
 		fetchInstance('https://aai-idp.uzh.ch' + url, {
 			headers: {
 				'User-Agent': config.USER_AGENT,
@@ -106,6 +99,12 @@ let fourth_request = function (body, fetchInstance) {
 	let form = $('form');
 	return new Promise(function (resolve, reject) {
 		var data = {};
+		const redirect_config = {
+			headers: {
+				'User-Agent': config.USER_AGENT
+			},
+			redirect: 'manual',
+		};
 		_.map($('form input'), function (input) {
 			if (!input.attribs.name) return;
 			data[input.attribs.name] = input.attribs.value;
@@ -115,42 +114,20 @@ let fourth_request = function (body, fetchInstance) {
 			body: qs.stringify(data),
 			headers: {
 				'User-Agent': config.USER_AGENT,
-				'Content-Type': 'application/x-www-form-urlencoded'
+				'Content-Type': 'application/x-www-form-urlencoded',
 			},
 			redirect: 'manual'
 		})
 		.then(response => response.headers.get('location'))
-		.then(location => {
-			console.log(location)
-			return fetchInstance(location, {
-				'User-Agent': config.USER_AGENT,
-				redirect: 'manual'
-			})
-		})
+		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.headers.get('location'))
-		.then(location => {
-			console.log(location)
-			return fetchInstance(location, {
-				'User-Agent': config.USER_AGENT,
-				redirect: 'manual'
-			})
-		})
+		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/stuadm/zcm_wsa_n/wsa01.do?ws=91&sap-ffield_b64=
 		.then(response => response.headers.get('location'))
-		.then(location => {
-			console.log(location)
-			return fetchInstance(location, {
-				'User-Agent': config.USER_AGENT,
-				redirect: 'manual'
-			})
-		})
+		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh(bD1kZSZjPTAwMQ==)/world/cm/stuadm/zcm_wsa_n/wsa01.do?ws=91&sap-ffield_b64=
 		.then(response => response.headers.get('location'))
-		.then(location => {
-			console.log(location)
-			return fetchInstance(location, {
-				'User-Agent': config.USER_AGENT,
-				redirect: 'manual'
-			})
-		})
+		.then(location => fetchInstance(location,redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
+		.then(response => response.headers.get('location'))
+		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.text())
 		.then(resolve)
 		.catch(reject);
@@ -176,13 +153,7 @@ exports.get = (username, password) => {
 		.then(function (html) {
 			return fourth_request(html, fetchInstance);
 		})
-		.then(function (html) {
-			console.log(html)
-			resolve({
-				success: true,
-				html
-			});
-		})
+		.then(html => resolve({success: true, html}))
 		.catch(reject);
 	});
 };
