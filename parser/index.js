@@ -1,5 +1,4 @@
 'use strict';
-var fs = require('fs');
 var cheerio = require('cheerio');
 var _ = require('underscore');
 var getShortName = require('@jonny/uzh-course-shortname');
