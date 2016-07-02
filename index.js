@@ -5,7 +5,6 @@ var scraper = require('./scraper');
 var statsCalculator = require('./stats');
 var personal = require('./personal');
 var parser = require('./parser');
-var listing = require('./listing');
 
 module.exports = function (username, password, fetch) {
 	return new Promise((resolve, reject) => {
@@ -20,7 +19,6 @@ module.exports = function (username, password, fetch) {
 			let credits = parser.fromHTML(result.html);
 			let stats = statsCalculator.calculate(credits);
 			let directions = personal.getStudyDirection(result.html);
-			credits = yield listing.addPaths(credits, directions);
 			let categories = yield listing.getCategories(credits);
 			resolve({
 				stats,
