@@ -5,6 +5,7 @@ var scraper = require('./scraper');
 var statsCalculator = require('./stats');
 var personal = require('./personal');
 var parser = require('./parser');
+var listing = require('./listing');
 
 module.exports = function (username, password, fetch) {
 	return new Promise((resolve, reject) => {

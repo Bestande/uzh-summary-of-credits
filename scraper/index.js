@@ -14,12 +14,13 @@ let _ = require('underscore');
 let first_request = function (fetchInstance) {
 	return new Promise(function (resolve, reject) {
 		fetchInstance(config.AUTH_URL, {
-			redirect: 'manual'
+			redirect: 'manual',
+			credentials: 'include'
 		})
-		.then(response => response.headers.get('location'))
+		/*.then(response => response.headers.get('set-cookie'))
 		.then(location => fetchInstance(location, {redirect: 'manual'}))
 		.then(response => response.headers.get('location'))
-		.then(location => fetchInstance(location))
+		.then(location => fetchInstance(location))*/
 		.then(response => response.text())
 		.then(body => {
 			if (body.indexOf('You don\'t have permission to access the requested object') > -1) {
@@ -47,10 +48,11 @@ let second_request = function (fetchInstance, username, password, url) {
 				'_shib_idp_revokeConsent': 'true'
 			}),
 			method: 'POST',
-			redirect: 'manual'
+			redirect: 'manual',
+			credentials: 'include'
 		})
-		.then(response => response.headers.get('location'))
-		.then(location => fetchInstance(location))
+		/*.then(response => response.headers.get('location'))
+		.then(location => fetchInstance(location))*/
 		.then(response => response.text())
 		.then(resolve)
 		.catch(reject);
@@ -83,7 +85,8 @@ let third_request = function (body, fetchInstance) {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			method: 'POST',
-			redirect: 'manual'
+			redirect: 'manual',
+			credentials: 'include'
 		})
 		.then(response => response.text())
 		.then(resolve)
@@ -113,9 +116,10 @@ let fourth_request = function (body, fetchInstance) {
 				'User-Agent': config.USER_AGENT,
 				'Content-Type': 'application/x-www-form-urlencoded',
 			},
-			redirect: 'manual'
+			redirect: 'manual',
+			credentials: 'include'
 		})
-		.then(response => response.headers.get('location'))
+		/*.then(response => response.headers.get('location'))
 		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.headers.get('location'))
 		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/stuadm/zcm_wsa_n/wsa01.do?ws=91&sap-ffield_b64=
@@ -124,7 +128,7 @@ let fourth_request = function (body, fetchInstance) {
 		.then(response => response.headers.get('location'))
 		.then(location => fetchInstance(location,redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.headers.get('location'))
-		.then(location => fetchInstance(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
+		.then(location => fetchInstance(location, redirect_config))*/ // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.text())
 		.then(resolve)
 		.catch(reject);
