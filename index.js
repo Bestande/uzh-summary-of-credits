@@ -5,9 +5,8 @@ var scraper = require('./scraper');
 var statsCalculator = require('./stats');
 var personal = require('./personal');
 var parser = require('./parser');
-var listing = require('./listing');
 
-module.exports = function (username, password, fetch) {
+function all (username, password, fetch) {
 	return new Promise((resolve, reject) => {
 		co(function *() {
 			if (!username) {
@@ -20,12 +19,10 @@ module.exports = function (username, password, fetch) {
 			let credits = parser.fromHTML(result.html);
 			let stats = statsCalculator.calculate(credits);
 			let directions = personal.getStudyDirection(result.html);
-			let categories = yield listing.getCategories(credits);
 			resolve({
 				stats,
 				directions,
 				credits,
-				categories,
 				success: true,
 				version: 2
 			});
@@ -33,3 +30,11 @@ module.exports = function (username, password, fetch) {
 		.catch(reject);
 	});
 };
+
+module.exports = {
+	all,
+	scraper,
+	stats: statsCalculator,
+	personal,
+	parser
+}
