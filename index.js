@@ -26,7 +26,6 @@ function all (username, password, fetch, feedback) {
 			version: 2
 		};
 	})
-	.catch(reject);
 };
 
 module.exports = {
