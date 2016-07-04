@@ -134,13 +134,16 @@ let fourth_request = function (body, fetch) {
 	});
 };
 
-exports.get = (username, password, fetch) => {
+exports.get = (username, password, fetch, feedback) => {
 	return new Promise(function (resolve, reject) {
+		feedback('Rufe uzh.ch auf...')
 		first_request(fetch)
 		.then(function (url) {
+			feedback('Einloggen...')
 			return second_request(fetch, username, password, url);
 		})
 		.then(function (body) {
+			feedback('Eingeloggt.')
 			if (status.loginFailed(body)) {
 				reject(new Error('USERNAME_PW_WRONG'));
 			}
@@ -150,6 +153,7 @@ exports.get = (username, password, fetch) => {
 			return third_request(body, fetch);
 		})
 		.then(function (html) {
+			feedback('Lade Module...')
 			return fourth_request(html, fetch);
 		})
 		.then(html => resolve({success: true, html}))
