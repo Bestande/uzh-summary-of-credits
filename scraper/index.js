@@ -6,6 +6,7 @@ var qs = require('qs');
 
 let cheerio = require('cheerio-without-node-native');
 let FormData = require('form-data');
+let IsomorphicFetch = require('real-isomorphic-fetch');
 
 
 let _ = require('underscore');
@@ -16,10 +17,6 @@ let first_request = function (fetch) {
 			redirect: 'manual',
 			credentials: 'include'
 		})
-		/*.then(response => response.headers.get('set-cookie'))
-		.then(location => fetch(location, {redirect: 'manual'}))
-		.then(response => response.headers.get('location'))
-		.then(location => fetch(location))*/
 		.then(response => response.text())
 		.then(body => {
 			if (body.indexOf('You don\'t have permission to access the requested object') > -1) {
@@ -50,8 +47,6 @@ let second_request = function (fetch, username, password, url) {
 			redirect: 'manual',
 			credentials: 'include'
 		})
-		/*.then(response => response.headers.get('location'))
-		.then(location => fetch(location))*/
 		.then(response => response.text())
 		.then(resolve)
 		.catch(reject);
@@ -118,23 +113,17 @@ let fourth_request = function (body, fetch) {
 			redirect: 'manual',
 			credentials: 'include'
 		})
-		/*.then(response => response.headers.get('location'))
-		.then(location => fetch(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
-		.then(response => response.headers.get('location'))
-		.then(location => fetch(location, redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/stuadm/zcm_wsa_n/wsa01.do?ws=91&sap-ffield_b64=
-		.then(response => response.headers.get('location'))
-		.then(location => fetch(location, redirect_config)) // https://idaps3.uzh.ch/uzh(bD1kZSZjPTAwMQ==)/world/cm/stuadm/zcm_wsa_n/wsa01.do?ws=91&sap-ffield_b64=
-		.then(response => response.headers.get('location'))
-		.then(location => fetch(location,redirect_config)) // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
-		.then(response => response.headers.get('location'))
-		.then(location => fetch(location, redirect_config))*/ // https://idaps3.uzh.ch/uzh/world/cm/studium/zcm_svmb1a/mb101.do
 		.then(response => response.text())
-		.then(resolve)
+		.then(response => {
+			console.log(response)
+			resolve(response);
+		})
 		.catch(reject);
 	});
 };
 
 exports.get = (username, password, fetch, feedback) => {
+	fetch = new IsomorphicFetch(fetch);
 	return new Promise(function (resolve, reject) {
 		feedback('Rufe uzh.ch auf...')
 		first_request(fetch)
