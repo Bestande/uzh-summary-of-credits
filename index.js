@@ -23,7 +23,7 @@ function all (username, password, fetch, feedback) {
 			directions,
 			credits,
 			success: true,
-			version: 2
+			version: 3
 		};
 	})
 };
