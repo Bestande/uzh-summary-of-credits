@@ -97,7 +97,7 @@ let fourth_request = function (body, fetch) {
 			headers: {
 				'User-Agent': config.USER_AGENT
 			},
-			redirect: 'manual',
+			redirect: 'manual'
 		};
 		_.map($('form input'), function (input) {
 			if (!input.attribs.name) return;
@@ -108,14 +108,14 @@ let fourth_request = function (body, fetch) {
 			body: qs.stringify(data),
 			headers: {
 				'User-Agent': config.USER_AGENT,
-				'Content-Type': 'application/x-www-form-urlencoded',
+				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			redirect: 'manual',
 			credentials: 'include'
 		})
 		.then(response => response.text())
 		.then(response => {
-			console.log(response)
+			console.log(response);
 			resolve(response);
 		})
 		.catch(reject);
@@ -125,14 +125,14 @@ let fourth_request = function (body, fetch) {
 exports.get = (username, password, fetch, feedback) => {
 	fetch = new IsomorphicFetch(fetch);
 	return new Promise(function (resolve, reject) {
-		feedback('Rufe uzh.ch auf...')
+		feedback('Rufe uzh.ch auf...');
 		first_request(fetch)
 		.then(function (url) {
-			feedback('Einloggen...')
+			feedback('Einloggen...');
 			return second_request(fetch, username, password, url);
 		})
 		.then(function (body) {
-			feedback('Eingeloggt.')
+			feedback('Eingeloggt.');
 			if (status.loginFailed(body)) {
 				reject(new Error('USERNAME_PW_WRONG'));
 			}
@@ -142,7 +142,7 @@ exports.get = (username, password, fetch, feedback) => {
 			return third_request(body, fetch);
 		})
 		.then(function (html) {
-			feedback('Lade Module...')
+			feedback('Lade Module...');
 			return fourth_request(html, fetch);
 		})
 		.then(html => resolve({success: true, html}))

@@ -13,7 +13,7 @@
     "node": ">=4.0.0"
   },
   "scripts": {
-    "test": "xo --fix && ava"
+    "test": "ava"
   },
   "keywords": [
     "Leistungsübersicht",

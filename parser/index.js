@@ -35,6 +35,26 @@ exports.groupBySemester = function (rows) {
 	return _.sortBy(rows, (row) => (0 - parseInt(row.semester.replace(/[^\d.]/g, '')) + row.semester)).reverse();
 };
 
+exports.filterDuplicates = function (credits) {
+	var keys = [];
+	credits = _.sortBy(credits, credit => {
+		if (credit.status == 'BOOKED') return 0;
+		if (credit.status == 'PASSED') return 1;
+		if (credit.status == 'FAILED') return 2;
+		if (credit.status == 'DESELECTED') return 3;
+		return 4;
+	});
+	credits = credits.filter(credit => {
+		var key = credit.link;
+		if (keys.indexOf(key) > -1) {
+			return false;
+		}
+		keys.push(key);
+		return true;
+	})
+	return credits.reverse();
+};
+
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
 	let rows = $('table').last().find('tr');
@@ -60,5 +80,6 @@ exports.fromHTML = function (html) {
 		}
 	});
 	rows = _.compact(rows);
+	rows = exports.filterDuplicates(rows);
 	return rows;
 };
