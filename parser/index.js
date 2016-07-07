@@ -38,9 +38,9 @@ exports.groupBySemester = function (rows) {
 exports.filterDuplicates = function (credits) {
 	var keys = [];
 	credits = _.sortBy(credits, credit => {
-		if (credit.status == 'FAILED') return 0;
+		if (credit.status == 'BOOKED') return 0;
 		if (credit.status == 'PASSED') return 1;
-		if (credit.status == 'BOOKED') return 2;
+		if (credit.status == 'FAILED') return 2;
 		if (credit.status == 'DESELECTED') return 3;
 		return 4;
 	});
@@ -52,7 +52,7 @@ exports.filterDuplicates = function (credits) {
 		keys.push(key);
 		return true;
 	})
-	return credits.reverse();
+	return credits;
 };
 
 exports.fromHTML = function (html) {

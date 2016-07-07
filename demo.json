@@ -1,0 +1,1076 @@
+{
+	"stats": {
+		"total_credits": 131.5,
+		"weighted_average": 4.76
+	},
+	"directions": [
+		{
+			"code": "50427948",
+			"name": "BSc UZH in Informatik (RO08)"
+		},
+		{
+			"code": "50352369",
+			"name": "MA UZH in Wirtschaftswissensch. (RO06)"
+		}
+	],
+	"credits": [
+		{
+			"semester": "FS16",
+			"credits": [
+				{
+					"module": "MOEC0054",
+					"name": "ME4: Organizational Economics (L+E)",
+					"short_name": "Organizational Economics",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/sm-50396283.modveranst.html",
+					"credits_worth": 6,
+					"status": "BOOKED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50352369010",
+							"50352370",
+							"50352375"
+						],
+						[
+							"50000003",
+							"50352369",
+							"50352369010",
+							"50352370",
+							"50352376"
+						],
+						[
+							"50000003",
+							"50352369",
+							"50352369010",
+							"50352370",
+							"50352373",
+							"50388003"
+						]
+					]
+				},
+				{
+					"module": "BINF4222",
+					"name": "Unternehmens-Standardsoftware (Business- Standardsoftware)",
+					"short_name": "Unternehmens-Standardsoftware",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/sm-50537185.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.00",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BINF3102",
+					"name": "Wiederholungsprüfung: Wirtschaftsinformatik (Re-examination: Business Informatics)",
+					"short_name": "Wirtschaftsinformatik",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/sm-50510833.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.00",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BINF4214",
+					"name": "Informatik, Ethik u. Gesellschaft (V) (Informatics, Ethics and Society)",
+					"short_name": "Informatik, Ethik u. Gesellschaft",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/sm-50369984.modveranst.html",
+					"credits_worth": 3,
+					"status": "BOOKED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BOEC0201",
+					"name": "Asset Pricing (L+E)",
+					"short_name": "Asset Pricing",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/sm-50314925.modveranst.html",
+					"credits_worth": 6,
+					"status": "BOOKED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387788"
+						]
+					]
+				}
+			]
+		},
+		{
+			"semester": "HS15",
+			"credits": [
+				{
+					"module": "BINFPR01",
+					"name": "Praktikum Datenbanksysteme BSc (Database Systems Lab BSc)",
+					"short_name": "Praktikum Datenbanksysteme BSc",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50499924.modveranst.html",
+					"credits_worth": 2,
+					"status": "PASSED",
+					"credits_received": 2,
+					"grade": "BEST",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044"
+						],
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BOEC0109",
+					"name": "Introduction to Game Theory (L + E)",
+					"short_name": "Introduction to Game Theory",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50430354.modveranst.html",
+					"credits_worth": 6,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387787"
+						]
+					]
+				},
+				{
+					"module": "BOEC0275",
+					"name": "A primer in Entrepreneurship (L)",
+					"short_name": "A primer in Entrepreneurship",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50427958.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.00",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387629"
+						]
+					]
+				},
+				{
+					"module": "BINF4206",
+					"name": "IT-Projektmanagement - Grundlagen und systemische Führung (V+Ü) (IT Project Management)",
+					"short_name": "IT-Projektmanagement",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50334138.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.25",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BMINF009",
+					"name": "Human Computer Interaction (L) (RO08)",
+					"short_name": "Human Computer Interaction",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50330443.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.00",
+					"paths": [
+						[
+							"50000003",
+							"50352369",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044"
+						]
+					]
+				},
+				{
+					"module": "BINF3100",
+					"name": "Wirtschaftsinformatik (V+Ü) (Business Informatics)",
+					"short_name": "Wirtschaftsinformatik",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50330434.modveranst.html",
+					"credits_worth": 6,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BOEC0047",
+					"name": "Mathematik III für Wirtschaftswissenschaftler (Mathematics III for economists)",
+					"short_name": "Mathematik III für Wirtschaftswissenschaftler",
+					"link": "http://www.vorlesungen.uzh.ch/HS15/suche/sm-50030847.modveranst.html",
+					"credits_worth": 6,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387629"
+						]
+					]
+				}
+			]
+		},
+		{
+			"semester": "FS15",
+			"credits": [
+				{
+					"module": "BOEC0131",
+					"name": "Organisation und Führung (V) (Organisation & Management)",
+					"short_name": "Organisation und Führung",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50475317.modveranst.html",
+					"credits_worth": 3,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "1.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387629"
+						]
+					]
+				},
+				{
+					"module": "BOEC0201",
+					"name": "Asset Pricing (L+E)",
+					"short_name": "Asset Pricing",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50314925.modveranst.html",
+					"credits_worth": 6,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387788"
+						]
+					]
+				},
+				{
+					"module": "BINF2190",
+					"name": "Scientific Presentation (Block)",
+					"short_name": "Scientific Presentation",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50308714.modveranst.html",
+					"credits_worth": 1,
+					"status": "PASSED",
+					"credits_received": 1,
+					"grade": "BEST",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BINF2150",
+					"name": "Software Praktikum (PR) (Software Engineering Lab)",
+					"short_name": "Software Praktikum",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50308604.modveranst.html",
+					"credits_worth": 5,
+					"status": "PASSED",
+					"credits_received": 5,
+					"grade": "BEST",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						],
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BINF2160",
+					"name": "Datenbanksysteme (V+Ü) (Database Systems)",
+					"short_name": "Datenbanksysteme",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50308551.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BMINF002",
+					"name": "Computer Graphics (L)",
+					"short_name": "Computer Graphics",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50308238.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "4.50",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BMINF006",
+					"name": "Mobile Communication Syst. (L+E)",
+					"short_name": "Mobile Communication Syst.",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50031187.modveranst.html",
+					"credits_worth": 4.5,
+					"status": "PASSED",
+					"credits_received": 4.5,
+					"grade": "4.50",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				}
+			]
+		},
+		{
+			"semester": "HS14",
+			"credits": [
+				{
+					"module": "BINF4206",
+					"name": "IT-Projektmanagement - Grundlagen und systemische Führung (V+Ü) (IT Project Management)",
+					"short_name": "IT-Projektmanagement",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50334138.modveranst.html",
+					"credits_worth": 3,
+					"status": "DESELECTED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BINF3100",
+					"name": "Wirtschaftsinformatik (V+Ü) (Business Informatics)",
+					"short_name": "Wirtschaftsinformatik",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50330434.modveranst.html",
+					"credits_worth": 6,
+					"status": "DESELECTED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "MINF4530",
+					"name": "Economics and Computation (L+E)",
+					"short_name": "Economics and Computation",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50583892.modveranst.html",
+					"credits_worth": 80,
+					"status": "PASSED",
+					"credits_received": 80,
+					"grade": "4.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044"
+						],
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428049"
+						]
+					]
+				},
+				{
+					"module": "BINF2110",
+					"name": "Software Engineering (V+Ü)",
+					"short_name": "Software Engineering",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50046683.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "BOEC0003",
+					"name": "BWL III (V+Ü) (Business Administration III)",
+					"short_name": "BWL III",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50046381.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						],
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044",
+							"50428048",
+							"50387629"
+						]
+					]
+				},
+				{
+					"module": "AOEC0020",
+					"name": "Mathematik I (V+Ü) (Mathematics I)",
+					"short_name": "Mathematik I",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50038004.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "5.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0018",
+					"name": "Mikroökonomik I (V+Ü) (Microeconomics I)",
+					"short_name": "Mikroökonomik I",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50038002.modveranst.html",
+					"credits_worth": 9,
+					"status": "PASSED",
+					"credits_received": 9,
+					"grade": "4.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428039"
+						]
+					]
+				},
+				{
+					"module": "AOEC0014",
+					"name": "Betriebswirtschaftslehre I (V + Ü) (Business Administration I)",
+					"short_name": "Betriebswirtschaftslehre I",
+					"link": "http://www.vorlesungen.uzh.ch/HS14/suche/sm-50038000.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				}
+			]
+		},
+		{
+			"semester": "FS14",
+			"credits": [
+				{
+					"module": "AOEC0004",
+					"name": "Betriebswirtschaftslehre II (V + Ü) (Business Administration II)",
+					"short_name": "Betriebswirtschaftslehre II",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030855.modveranst.html",
+					"credits_worth": 6,
+					"status": "DESELECTED",
+					"credits_received": 0,
+					"grade": "",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0004",
+					"name": "Betriebswirtschaftslehre II (V + Ü) (Business Administration II)",
+					"short_name": "Betriebswirtschaftslehre II",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030855.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.50",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AINF1164",
+					"name": "Kommunikationssysteme (V+Ü) (Communication Systems)",
+					"short_name": "Kommunikationssysteme",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50489590.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "4.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						],
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427957",
+							"50428044"
+						]
+					]
+				},
+				{
+					"module": "AINF1150",
+					"name": "Informatik II: Modellierung, Algorithmen + Datenstrukturen (V+Ü) (Informatics II: Modeling, Algorithms + Data Structures)",
+					"short_name": "Informatik II",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50031083.modveranst.html",
+					"credits_worth": 9,
+					"status": "PASSED",
+					"credits_received": 9,
+					"grade": "4.50",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0010",
+					"name": "Statistik (V+Ü) (Statistics)",
+					"short_name": "Statistik",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030887.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0008",
+					"name": "Mathematik II (V+Ü) (Mathematics II)",
+					"short_name": "Mathematik II",
+					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030886.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "5.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				}
+			]
+		},
+		{
+			"semester": "HS13",
+			"credits": [
+				{
+					"module": "AINF1161",
+					"name": "Informatik im Unternehmen (V) (Informatics for Organizations)",
+					"short_name": "Informatik im Unternehmen",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50028473.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AINF1110",
+					"name": "Formale Grundlagen der Informatik I (V) (Formal Methods for Computer Science I)",
+					"short_name": "Formale Grundlagen der Informatik I",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50038026.modveranst.html",
+					"credits_worth": 3,
+					"status": "PASSED",
+					"credits_received": 3,
+					"grade": "5.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AINF1100",
+					"name": "Informatik I (V+Ü) (Informatics I)",
+					"short_name": "Informatik I",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50038025.modveranst.html",
+					"credits_worth": 9,
+					"status": "PASSED",
+					"credits_received": 9,
+					"grade": "4.25",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0020",
+					"name": "Mathematik I (V+Ü) (Mathematics I)",
+					"short_name": "Mathematik I",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50038004.modveranst.html",
+					"credits_worth": 6,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.75",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0016",
+					"name": "Financial Accounting (L + E)",
+					"short_name": "Financial Accounting",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50038001.modveranst.html",
+					"credits_worth": 6,
+					"status": "PASSED",
+					"credits_received": 6,
+					"grade": "4.50",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				},
+				{
+					"module": "AOEC0014",
+					"name": "Betriebswirtschaftslehre I (V + Ü) (Business Administration I)",
+					"short_name": "Betriebswirtschaftslehre I",
+					"link": "http://www.vorlesungen.uzh.ch/HS13/suche/sm-50038000.modveranst.html",
+					"credits_worth": 3,
+					"status": "FAILED",
+					"credits_received": 0,
+					"grade": "3.00",
+					"paths": [
+						[
+							"50000003",
+							"50427948",
+							"50427948010",
+							"50427949",
+							"50427953"
+						]
+					]
+				}
+			]
+		}
+	],
+	"categories": {
+		"50000003": "Wirtschaftswissenschaftliche Fakultät",
+		"50387629": "BA: Wahlpflichtbereiche BWL",
+		"50387787": "BA: Wahlpflichtbereiche VWL",
+		"50387788": "BA: Wahlpflichtbereiche BF",
+		"50427948": "Bachelor of Science UZH in Informatik (RO08) ",
+		"50427949": "Wirtschaftsinformatik",
+		"50427953": "BInf08: Assessmentstufe Wirtschaftsinformatik / Softwaresysteme ",
+		"50427957": "BInf08: Bachelorstufe Wirtschaftsinformatik ",
+		"50428039": "BInf08: Pflichtprogramm Wirtschaftsinformatik ",
+		"50428044": "BInf08: Wahlpflichtbereich Wirtschaftsinformatik ",
+		"50428048": "BInf08: Wahlpflichtmodule Wirtschaftswissenschaften ",
+		"50428049": "BInf08: Wahlbereich Wirtschaftsinformatik ",
+		"50427948010": "Hauptfach",
+		"50000001": "Theologische Fakultät",
+		"50000002": "Rechtswissenschaftliche Fakultät",
+		"50000003": "Wirtschaftswissenschaftliche Fakultät",
+		"50000007": "Philosophische Fakultät",
+		"50000008": "Mathematisch-naturwissenschaftliche Fakultät",
+		"50014157": "Bachelor of Arts UZH in\nWirtschaftswissenschaften (RO04)\n",
+		"50014160": "Volkswirtschaftslehre",
+		"50014161": "Betriebswirtschaftslehre",
+		"50014181": "Banking and Finance",
+		"50014183": "Management and Economics",
+		"50017343": "Wirtschaftswissenschaften",
+		"50017344": "Bachelor of Science in Informatik RO\n2004\n",
+		"50017345": "Informatik",
+		"50021121": "Wirtschaftschemie",
+		"50021125": "1. Studienjahr",
+		"50021126": "2. Studienjahr",
+		"50021127": "3. Studienjahr",
+		"50021534": "Wirtschaftsinformatik\n",
+		"50306169": "Bachelor of Arts",
+		"50306207": "Bachelor of Theology UZH",
+		"50306208": "Bachelor of Arts in Sozialwissenschaften",
+		"50306211": "Bachelor of Science in Psychologie",
+		"50306212": "Master of Theology UZH",
+		"50306474": "Bachelor of Arts UZH in\nReligionswissenschaft\n",
+		"50306475": "Master of Arts UZH in\nReligionswissenschaft\n",
+		"50351455": "Betriebswirtschaftslehre",
+		"50351464": "Betriebswirtschaftslehre",
+		"50351467": "Volkswirtschaftslehre",
+		"50351475": "Banking and Finance",
+		"50351477": "Management and Economics",
+		"50351482": "Management and Economics",
+		"50351780": "Volkswirtschaftslehre",
+		"50351782": "Banking and Finance",
+		"50352369": "Master of Arts UZH in\nWirtschaftswissenschaften (RO06)\n",
+		"50352370": "Wirtschaftswissenschaften",
+		"50352371": "Betriebswirtschaftslehre",
+		"50352373": "Volkswirtschaftslehre",
+		"50352375": "Banking and Finance",
+		"50352376": "Management and Economics",
+		"50359561": "Wirtschaftsinformatik",
+		"50359562": "Wirtschaftsinformatik",
+		"50359573": "NF Informatik 2006, Profil\nWirtschaftsinformatik: Vertiefungsstufe\n(30,45 ECTS)\n",
+		"50359904": "NF Informatik 2006, Profil\nWirtschaftsinformatik: Vertiefungsstufe\n(60\n",
+		"50383586": "Master of Arts",
+		"50383587": "Master of Arts in Sozialwissenschaften",
+		"50383588": "Master of Science in Psychologie",
+		"50387629": "BA: Wahlpflichtbereiche BWL",
+		"50387787": "BA: Wahlpflichtbereiche VWL",
+		"50387788": "BA: Wahlpflichtbereiche BF",
+		"50387999": "MA: Wahlpflichtbereiche BWL",
+		"50388003": "MA: Wahlpflichtbereiche VWL",
+		"50409291": "Master of Law UZH",
+		"50410872": "Master of Law UZH (Business Law)",
+		"50410876": "Wahlpflichtpools",
+		"50427948": "Bachelor of Science UZH\nin Informatik (RO08)\n",
+		"50427949": "Wirtschaftsinformatik",
+		"50427950": "Softwaresysteme",
+		"50427951": "Angewandte Informatik",
+		"50427953": "BInf08: Assessmentstufe\nWirtschaftsinformatik / Softwaresysteme\n",
+		"50427957": "BInf08: Bachelorstufe\nWirtschaftsinformatik\n",
+		"50428039": "BInf08: Pflichtprogramm\nWirtschaftsinformatik\n",
+		"50428044": "BInf08: Wahlpflichtbereich\nWirtschaftsinformatik\n",
+		"50428048": "BInf08: Wahlpflichtmodule\nWirtschaftswissenschaften\n",
+		"50428055": "Neuroinformatik",
+		"50428057": "Bioinformatik",
+		"50428058": "Geoinformatik",
+		"50428159": "Computerlinguistik",
+		"50428161": "BInf08: Assessmentstufe Angewandte\nInformatik: Neuroinformatik\n",
+		"50428183": "BInf08: Assessmentstufe Angewandte\nInformatik: Bioinformatik\n",
+		"50428321": "BInf08: Assessmentstufe Angewandte\nInformatik: Geoinformatik\n",
+		"50428328": "BInf08: Assessmentstufe Angewandte\nInformatik: Computerlinguistik\n",
+		"50437630": "Master of Law UZH Double Degree\nUniversiteit Maastricht\n",
+		"50437643": "Master of Law UZH (Business Law)",
+		"50437749": "Wahlpflichtpools",
+		"50438149": "Recht",
+		"50438150": "Recht",
+		"50438152": "Wahlpflichtpools",
+		"50438175": "Wahlpflichtpools",
+		"50456015": "Master of Arts in Religion – Wirtschaft\n– Politik (JDP)\n",
+		"50456016": "Religion - Wirtschaft - Politik",
+		"50465760": "Vertiefungsstufe Nebenfach\nBetriebswirtschaftslehre\n",
+		"50465761": "Vertiefungsstufe Nebenfach\nVolkswirtschaftslehre\n",
+		"50465762": "Vertiefungsstufe Nebenfach Banking and\nFinance\n",
+		"50465763": "Vertiefungsstufe Nebenfach Management\nand Economics (30 ECTS)\n",
+		"50465765": "Vertiefungsstufe Nebenfach Management\nand Economics (45 / 60 ECTS)\n",
+		"50475410": "Medieninformatik",
+		"50475411": "BInf08: Assessmentstufe Angewandte\nInformatik: Medieninformatik\n",
+		"50494764": "Master of Arts in Antikes Judentum (JDP)\n",
+		"50503822": "Bachelor of Science\nMathematisch-naturwissenschaftliche\nFakultät\n",
+		"50544113": "Master of Science\nMathematisch-naturwissenschaftliche\nFakultät\n",
+		"50624622": "Master of Law UZH (RVO13)\n",
+		"50624650": "Wirtschaftsrecht",
+		"50624655": "Master of Law UZH (Double Degree\nKing's College London, RVO14)\n",
+		"50624660": "Rechtswissenschaft",
+		"50624720": "Wirtschaftsrecht",
+		"50624948": "Master of Law UZH (Double Degree\nUC Berkeley, RVO14)\n",
+		"50624951": "Rechtswissenschaft",
+		"50625187": "Master of Law UZH (Double Degree\nUniversiteit Maastricht, RVO14)\n",
+		"50625189": "Rechtswissenschaft",
+		"50625194": "Master of Law UZH (Double Degree\nUniversity of Hong Kong, RVO14)\n",
+		"50625196": "Rechtswissenschaft",
+		"50625204": "Master of Law UZH (Double Degree\nUniversité de Strasbourg, RVO14)\n",
+		"50625207": "Rechtswissenschaft",
+		"50630167": "Rechtswissenschaft (spezialisierter\nMaster)\n",
+		"50630210": "Wahlpflichtpools",
+		"50631275": "Wirtschaftsrecht",
+		"50631284": "Wirtschaftsrecht",
+		"50631292": "Wirtschaftsrecht",
+		"50631301": "Wirtschaftsrecht",
+		"50729472": "Wirtschaftsrecht",
+		"50729477": "Master of Law UZH (Double Degree\nUniversiteit Leuven, RVO14)\n",
+		"50729482": "Wirtschaftsrecht",
+		"50729547": "Master of Law UZH (Double Degree\nDoshisha University, RVO14)\n",
+		"50729548": "Rechtswissenschaft",
+		"50729952": "Rechtswissenschaft",
+		"50761374": "Bachelor of Science\nMathematisch-naturwissenschaftliche\nFakultät (ab Herbstsemester 2016)\n",
+		"50772013": "Bachelor of Arts UZH in\nWirtschaftswissenschaften (RVO16)\n",
+		"50772016": "Volkswirtschaftslehre",
+		"50772017": "Betriebswirtschaftslehre",
+		"50772068": "Aufbaustufe Bachelor\nVolkswirtschaftslehre\n",
+		"50772071": "Volkswirtschaftslehre",
+		"50772072": "Betriebswirtschaftslehre",
+		"50772079": "Bachelor of Science UZH\nin Informatik (RVO16)\n",
+		"50772236": "Volkswirtschaftslehre",
+		"50772255": "Betriebswirtschaftslehre",
+		"50772335": "Aufbaustufe Volkswirtschaftslehre 60\n",
+		"50772337": "Aufbaustufe Betriebswirtschaftslehre 60\n",
+		"50772350": "Volkswirtschaftslehre",
+		"50772352": "Aufbaustufe Volkswirtschaftslehre 30\n",
+		"50772353": "Betriebswirtschaftslehre",
+		"50772355": "Aufbaustufe Betriebswirtschaftslehre 30\n",
+		"50772665": "Aufbaustufe Bachelor\nBetriebswirtschaftslehre\n",
+		"50014157010": "Hauptfach",
+		"50017344010": "Hauptfach",
+		"50306169151": "Nebenfach 60 weitere Fakultäten",
+		"50306169161": "Nebenfach 30 weitere Fakultäten",
+		"50306207151": "Nebenfach 60 weitere Fakultäten",
+		"50306207161": "Nebenfach 30 weitere Fakultäten",
+		"50306208151": "Nebenfach 60 weitere Fakultäten",
+		"50306208161": "Nebenfach 30 weitere Fakultäten",
+		"50306211151": "Nebenfach 60 weitere Fakultäten",
+		"50306211161": "Nebenfach 30 weitere Fakultäten",
+		"50306212191": "Nebenfach 30 weitere Fakultäten",
+		"50306212201": "Nebenfach 15 weitere Fakultäten",
+		"50306474151": "Nebenfach 60 weitere Fakultäten",
+		"50306474161": "Nebenfach 30 weitere Fakultäten",
+		"50306475191": "Nebenfach 30 weitere Fakultäten",
+		"50306475201": "Nebenfach 15 weitere Fakultäten",
+		"50352369010": "Hauptfach",
+		"50383586191": "Nebenfach 30 weitere Fakultäten",
+		"50383586201": "Nebenfach 15 weitere Fakultäten",
+		"50383587191": "Nebenfach 30 weitere Fakultäten",
+		"50383587201": "Nebenfach 15 weitere Fakultäten",
+		"50383588201": "Nebenfach 15 weitere Fakultäten",
+		"50409291010": "Hauptfach",
+		"50427948010": "Hauptfach",
+		"50437630010": "Hauptfach",
+		"50456015240": "Vollstudienfach 120",
+		"50494764191": "Nebenfach 30 weitere Fakultäten",
+		"50503822010": "Hauptfach",
+		"50503822151": "Nebenfach 60 weitere Fakultäten",
+		"50503822161": "Nebenfach 30 weitere Fakultäten",
+		"50544113191": "Nebenfach 30 weitere Fakultäten",
+		"50544113201": "Nebenfach 15 weitere Fakultäten",
+		"50624622010": "Hauptfach",
+		"50624655010": "Hauptfach",
+		"50624948010": "Hauptfach",
+		"50625187010": "Hauptfach",
+		"50625194010": "Hauptfach",
+		"50625204010": "Hauptfach",
+		"50729477010": "Hauptfach",
+		"50729547010": "Hauptfach",
+		"50761374151": "Nebenfach 60 weitere Fakultäten",
+		"50761374161": "Nebenfach 30 weitere Fakultäten",
+		"50772013160": "Nebenfach 30 Wirtschaftswissenschaftl. Fakultät",
+		"50772013380": "Hauptfach 150",
+		"50772079160": "Nebenfach 30 Wirtschaftswissenschaftl. Fakultät"
+
+	},
+	"success": true
+}
