@@ -5,6 +5,7 @@ var scraper = require('./scraper');
 var statsCalculator = require('./stats');
 var personal = require('./personal');
 var parser = require('./parser');
+var demo = require('./demo');
 
 function all (username, password, fetch, feedback) {
 	return co(function *() {
@@ -13,6 +14,9 @@ function all (username, password, fetch, feedback) {
 		}
 		if (!password) {
 			throw new Error('NO_PASSWORD');
+		}
+		if (username == 'bestande' && password == 'bestande') {
+			return demo;
 		}
 		let result = yield scraper.get(username, password, fetch, feedback);
 		let credits = parser.fromHTML(result.html);
