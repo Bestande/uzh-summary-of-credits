@@ -131,10 +131,10 @@ exports.get = (username, password, fetch, feedback) => {
 		.then(function (body) {
 			feedback('Eingeloggt.');
 			if (status.loginFailed(body)) {
-				reject(new Error('USERNAME_PW_WRONG'));
+				return reject(new Error('USERNAME_PW_WRONG'));
 			}
 			if (status.usernameUnknown(body)) {
-				reject(new Error('USERNAME_UNKNOWN'));
+				return reject(new Error('USERNAME_UNKNOWN'));
 			}
 			return third_request(body, fetch);
 		})
