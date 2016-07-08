@@ -45,13 +45,17 @@ exports.filterDuplicates = function (credits) {
 		return 4;
 	});
 	credits = credits.filter(credit => {
-		var key = credit.link;
+		var key = credit.link + credit.status;
 		if (keys.indexOf(key) > -1) {
 			return false;
 		}
 		keys.push(key);
 		return true;
-	})
+	});
+	credits = credits.map((credit, index) => {
+		credit.link += '#' + index;
+		return credit;
+	});
 	return credits;
 };
 
