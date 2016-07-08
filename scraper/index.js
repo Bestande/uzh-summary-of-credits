@@ -114,10 +114,7 @@ let fourth_request = function (body, fetch) {
 			credentials: 'include'
 		})
 		.then(response => response.text())
-		.then(response => {
-			console.log(response);
-			resolve(response);
-		})
+		.then(resolve)
 		.catch(reject);
 	});
 };
