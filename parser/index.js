@@ -22,10 +22,7 @@ var getStatus = function (d) {
 };
 
 exports.groupBySemester = function (rows) {
-	rows = _.groupBy(rows, (row) => {
-		var ay = row.link.match(/.ch\/((HS|FS)[0-9]+)/);
-		return ay[1];
-	});
+	rows = _.groupBy(rows, row => row.link.match(/.ch\/((HS|FS)[0-9]+)/)[1]);
 	rows = _.map(rows, (row, key) => {
 		return {
 			semester: key,
