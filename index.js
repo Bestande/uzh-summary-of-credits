@@ -7,7 +7,7 @@ var personal = require('./personal');
 var parser = require('./parser');
 var demo = require('./demo');
 
-function all (username, password, fetch, feedback) {
+function all(username, password, fetch, feedback) {
 	return co(function *() {
 		if (!username) {
 			throw new Error('NO_USERNAME');
@@ -15,7 +15,7 @@ function all (username, password, fetch, feedback) {
 		if (!password) {
 			throw new Error('NO_PASSWORD');
 		}
-		if (username == 'bestande' && password == 'bestande') {
+		if (username === 'bestande' && password === 'bestande') {
 			return demo;
 		}
 		let result = yield scraper.get(username, password, fetch, feedback);
@@ -29,8 +29,8 @@ function all (username, password, fetch, feedback) {
 			success: true,
 			version: 3
 		};
-	})
-};
+	});
+}
 
 module.exports = {
 	all,
@@ -38,4 +38,4 @@ module.exports = {
 	stats: statsCalculator,
 	personal,
 	parser
-}
+};

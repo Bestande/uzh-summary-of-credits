@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const START_INDICATOR_DIRECTION = '!-- [               Studiengang';
 const END_INDICATOR_DIRECTION = '] -->';
@@ -13,16 +13,18 @@ var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 
 exports.getStudyDirection = function (html) {
-    let start = html.indexOf(START_INDICATOR_DIRECTION);
-    let trimmed = html.substr(start + START_INDICATOR_DIRECTION.length);
-    let end = trimmed.indexOf(END_INDICATOR_DIRECTION);
+	let start = html.indexOf(START_INDICATOR_DIRECTION);
+	let trimmed = html.substr(start + START_INDICATOR_DIRECTION.length);
+	let end = trimmed.indexOf(END_INDICATOR_DIRECTION);
 
-    let form = trimmed.substr(0, end);
+	let form = trimmed.substr(0, end);
 
-    let $ = cheerio.load(form);
-    let options = _.map($('select option'), (option) => { return {code: $(option).attr('value'), name: $(option).text()}});
-    return options;
-}
+	let $ = cheerio.load(form);
+	let options = _.map($('select option'), option => {
+		return {code: $(option).attr('value'), name: $(option).text()};
+	});
+	return options;
+};
 
 exports.getName = function (html) {
 	let start = html.indexOf(START_INDICATOR_NAME);
@@ -39,7 +41,7 @@ exports.getName = function (html) {
 		last,
 		first
 	};
-}
+};
 
 exports.getMatriculateNumber = function (html) {
 	let start = html.indexOf(START_INDICATOR_MATRICULATE_NO);
@@ -48,6 +50,5 @@ exports.getMatriculateNumber = function (html) {
 
 	let tr = trimmed.substr(0, end);
 	let $ = cheerio.load(tr);
-	let matriculate_no = $('td.datenwert').text();
-	return matriculate_no;
-}
+	return $('td.datenwert').text();
+};

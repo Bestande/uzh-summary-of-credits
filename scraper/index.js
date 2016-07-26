@@ -1,17 +1,14 @@
 'use strict';
 
-const config = require('./const.js');
-var status = require('./status.js');
 var qs = require('qs');
-
+let _ = require('underscore');
 let cheerio = require('cheerio-without-node-native');
-let FormData = require('form-data');
 let IsomorphicFetch = require('real-isomorphic-fetch');
 
+const config = require('./const.js');
+var status = require('./status.js');
 
-let _ = require('underscore');
-
-let first_request = function (fetch) {
+let firstRequest = function (fetch) {
 	return new Promise(function (resolve, reject) {
 		fetch(config.AUTH_URL, {
 			redirect: 'manual',
@@ -22,15 +19,14 @@ let first_request = function (fetch) {
 			if (body.indexOf('You don\'t have permission to access the requested object') > -1) {
 				return reject(new Error('Anfrage wurde blockiert'));
 			}
-			var url = body.match(/action=\"(.*?)\"/);
+			var url = body.match(/action="(.*?)"/);
 			resolve(url[1]);
 		})
 		.catch(reject);
 	});
 };
 
-
-let second_request = function (fetch, username, password, url) {
+let secondRequest = function (fetch, username, password, url) {
 	return new Promise(function (resolve, reject) {
 		fetch('https://aai-idp.uzh.ch' + url, {
 			headers: {
@@ -38,10 +34,12 @@ let second_request = function (fetch, username, password, url) {
 				'Content-Type': 'application/x-www-form-urlencoded'
 			},
 			body: qs.stringify({
-				'j_username': username,
-				'j_password': password,
-				'_eventId_proceed': '',
-				'_shib_idp_revokeConsent': 'true'
+				/* eslint-disable camelcase */
+				j_username: username,
+				j_password: password,
+				_eventId_proceed: '',
+				_shib_idp_revokeConsent: 'true'
+				/* eslint-enable camelcase */
 			}),
 			method: 'POST',
 			redirect: 'manual',
@@ -53,22 +51,26 @@ let second_request = function (fetch, username, password, url) {
 	});
 };
 
-let third_request = function (body, fetch) {
+let thirdRequest = function (body, fetch) {
 	return new Promise(function (resolve, reject) {
 		let _$ = cheerio.load(body);
 		let _action = _$('form')[0].attribs.action;
 		let _data = {};
 		_.each(_$('form input'), function (_input) {
-			if (!_input.attribs.name) return;
-			if (_input.attribs.name == '_eventId_AttributeReleaseRejected') return;
-			if (_input.attribs.value == '_shib_idp_rememberConsent') return;
+			if (!_input.attribs.name) {
+				return;
+			}
+			if (_input.attribs.name === '_eventId_AttributeReleaseRejected') {
+				return;
+			}
+			if (_input.attribs.value === '_shib_idp_rememberConsent') {
+				return;
+			}
 			if (_.isString(_data[_input.attribs.name])) {
 				_data[_input.attribs.name] = [_data[_input.attribs.name], _input.attribs.value];
-			}
-			else if (_.isArray(_data[_input.attribs.name])) {
+			} else if (_.isArray(_data[_input.attribs.name])) {
 				_data[_input.attribs.name].push(_input.attribs.value);
-			}
-			else {
+			} else {
 				_data[_input.attribs.name] = _input.attribs.value;
 			}
 		});
@@ -88,19 +90,14 @@ let third_request = function (body, fetch) {
 	});
 };
 
-let fourth_request = function (body, fetch) {
+let fourthRequest = function (body, fetch) {
 	let $ = cheerio.load(body);
-	let form = $('form');
 	return new Promise(function (resolve, reject) {
 		var data = {};
-		const redirect_config = {
-			headers: {
-				'User-Agent': config.USER_AGENT
-			},
-			redirect: 'manual'
-		};
 		_.map($('form input'), function (input) {
-			if (!input.attribs.name) return;
+			if (!input.attribs.name) {
+				return;
+			}
 			data[input.attribs.name] = input.attribs.value;
 		});
 		fetch($('form')[0].attribs.action, {
@@ -123,24 +120,24 @@ exports.get = (username, password, fetch, feedback) => {
 	fetch = new IsomorphicFetch(fetch);
 	return new Promise(function (resolve, reject) {
 		feedback('Rufe uzh.ch auf...');
-		first_request(fetch)
+		firstRequest(fetch)
 		.then(function (url) {
 			feedback('Einloggen...');
-			return second_request(fetch, username, password, url);
+			return secondRequest(fetch, username, password, url);
 		})
 		.then(function (body) {
-			feedback('Eingeloggt.');
+			feedback('Eingeloggt...');
 			if (status.loginFailed(body)) {
 				return reject(new Error('USERNAME_PW_WRONG'));
 			}
 			if (status.usernameUnknown(body)) {
 				return reject(new Error('USERNAME_UNKNOWN'));
 			}
-			return third_request(body, fetch);
+			return thirdRequest(body, fetch);
 		})
 		.then(function (html) {
 			feedback('Lade Module...');
-			return fourth_request(html, fetch);
+			return fourthRequest(html, fetch);
 		})
 		.then(html => resolve({success: true, html}))
 		.catch(reject);

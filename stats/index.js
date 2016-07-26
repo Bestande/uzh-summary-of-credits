@@ -1,5 +1,6 @@
 var _ = require('underscore');
 
+/* eslint-disable camelcase */
 exports.calculate = function (credits) {
 	var obj = {
 		total_credits: exports.getTotalCredits(credits)
@@ -13,16 +14,23 @@ exports.getTotalCredits = function (credits) {
 };
 
 exports.parseGrade = function (grade) {
-	if (grade === 'BEST') return 6;
+	if (grade === 'BEST') {
+		return 6;
+	}
 	var parsed = parseFloat(grade);
-	if (_.isNaN(parsed)) return 1;
+	if (_.isNaN(parsed)) {
+		return 1;
+	}
 	return parsed;
 };
 
 exports.getWeightedAverage = function (credits, total_credits) {
-	if (!credits.length) return 0;
+	if (!credits.length) {
+		return 0;
+	}
 	var avg = _.reduce(credits, (a, b) => {
 		return b.credits_received * exports.parseGrade(b.grade) + a;
 	}, 0) / total_credits;
 	return Math.round(avg * 100) / 100;
 };
+/* eslint-enable camelcase */

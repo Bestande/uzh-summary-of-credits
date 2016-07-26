@@ -2,23 +2,19 @@
 var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 var getShortName = require('@jonny/uzh-course-shortname');
+var uzhSemesters = require('@jonny/uzh-semesters');
 
 var getStatus = function (d) {
 	if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif') {
 		return 'PASSED';
-	}
-	else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_ston.gif') {
+	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_ston.gif') {
 		return 'DESELECTED';
-	}
-	else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_canc.gif') {
+	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_canc.gif') {
 		return 'FAILED';
-	}
-	else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_bokd.gif') {
+	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_bokd.gif') {
 		return 'BOOKED';
 	}
-	else {
-		return 'UNKNOWN';
-	}
+	return 'UNKNOWN';
 };
 
 exports.groupBySemester = function (rows) {
@@ -29,16 +25,24 @@ exports.groupBySemester = function (rows) {
 			credits: row
 		};
 	});
-	return _.sortBy(rows, (row) => (0 - parseInt(row.semester.replace(/[^\d.]/g, '')) + row.semester)).reverse();
+	return _.sortBy(rows, row => uzhSemesters.all.indexOf(row.semester)).reverse();
 };
 
 exports.filterDuplicates = function (credits) {
 	var keys = [];
 	credits = _.sortBy(credits, credit => {
-		if (credit.status == 'BOOKED') return 0;
-		if (credit.status == 'PASSED') return 1;
-		if (credit.status == 'FAILED') return 2;
-		if (credit.status == 'DESELECTED') return 3;
+		if (credit.status === 'BOOKED') {
+			return 0;
+		}
+		if (credit.status === 'PASSED') {
+			return 1;
+		}
+		if (credit.status === 'FAILED') {
+			return 2;
+		}
+		if (credit.status === 'DESELECTED') {
+			return 3;
+		}
 		return 4;
 	});
 	credits = credits.filter(credit => {
@@ -64,10 +68,10 @@ exports.fromHTML = function (html) {
 			var grade;
 			try {
 				grade = $(row.children[9].children[0]).text().trim();
-			}
-			catch (e) {
+			} catch (e) {
 				grade = 'BEST';
 			}
+			/* eslint-disable camelcase */
 			return {
 				module: $(row.children[0].children[0]).text().trim(),
 				name: $(row.children[2].children[0].children[0]).text().trim(),
@@ -78,6 +82,7 @@ exports.fromHTML = function (html) {
 				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
 				grade: grade
 			};
+			/* eslint-enable camelcase */
 		}
 	});
 	rows = _.compact(rows);
