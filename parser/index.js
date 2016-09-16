@@ -64,7 +64,7 @@ exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
 	let rows = $('table').last().find('tr');
 	rows = _.map(rows, function (row) {
-		if (row.type === 'tag' && row.name === 'tr' && row.children[0].name && row.children[2].children[0].children) {
+		if (row.type === 'tag' && row.name === 'tr' && row.children[0].name) {
 			var grade;
 			try {
 				grade = $(row.children[9].children[0]).text().trim();
