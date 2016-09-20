@@ -27,7 +27,7 @@ function all(username, password, fetch, feedback) {
 			directions,
 			credits,
 			success: true,
-			version: 3
+			version: 4
 		};
 	});
 }
