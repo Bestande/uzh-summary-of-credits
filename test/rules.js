@@ -1,5 +1,5 @@
 import test from 'ava';
-import parser from './parser';
+import parser from '../parser';
 
 test('It should sort modules correctly', t => {
 	const modules = [

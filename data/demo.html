@@ -1,0 +1,354 @@
+<!--
+<script language="JavaScript" >
+/****************************************************************
+ * TCE, 18.12.2008
+ ****************************************************************/
+
+function setCookie(name, value, domain, expires, path, secure) {
+  var cook = name + "=" + unescape(value);
+  cook += (domain) ? "; domain=" + domain : "";
+  cook += (expires) ? "; expires=" + expires : "";
+  cook += (path) ? "; path=" + path : "";
+  cook += (secure) ? "; secure" : "";
+  document.cookie = cook;
+}
+
+function doOnLoad()
+{
+
+
+
+  route = "192.168.76.121";
+
+  date = new Date();
+  days = 1;
+  date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+  expires_tomorrow = date.toGMTString();
+
+  setCookie("STICKY_ROUTE", "route." + route, "", expires_tomorrow, "", "");
+}
+
+</script>
+
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head><title>Übersicht akademische Leistungen</title><meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7">
+    <meta http-equiv="CACHE-CONTROL" content="NO-CACHE">
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" language="JavaScript" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/events.js"></script><script type="text/javascript" language="JavaScript" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/event_dictionary.js"></script><link type="text/css" href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/controls_nn6.css" rel="stylesheet"><script type="text/javascript" language="JavaScript" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/controls_nn6.js"></script><link type="text/css" href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/xcontrols_nn7.htm" rel="stylesheet"><script type="text/javascript" language="JavaScript" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/xcontrols_nn6.js"></script><link type="text/css" href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/tbv_nn6.css" rel="stylesheet">
+       <link href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/formular.css" rel="stylesheet" type="text/css">
+       <link href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/uzh.css" rel="stylesheet" type="text/css">
+       <link href="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/new_cd.css" rel="stylesheet" type="text/css">
+    </head><body class="sapBdyStd" scroll="AUTO" style="margin-left:2;margin-right:2;margin-top:2;margin-bottom:2">
+
+
+
+<div class="bodywidth">
+  <a title="Home" href="#home" accesskey="0"><!----></a>
+  <a title="Topnavigation" href="#entrythemes" accesskey="1"><!----></a>
+  <a title="Direkt zum Inhalt" href="#content" accesskey="5"><!----></a>
+  <a name="top"><!----></a>
+  <div id="topline"></div>
+  <div class="floatclear"><!----></div>
+  <div id="headerarea">
+    <div id="servicenav">
+      <a name="home" href="https://www.uzh.ch/index.html" class="current">Home</a> | <a href="https://www.uzh.ch/contact.html">Kontakt</a> | <a href="https://idaps1.uzh.ch/uzh%28bD1lbiZjPTAwMQ==%29/world/cm/studium/zcm_svmb1a/mb1_logout.htm">Logout</a> | <a href="https://www.students.uzh.ch/support.html">Hilfe</a>
+    </div>
+    <div id="uzhlogo"><a href="https://www.uzh.ch/">
+      <img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/uzh_logo_d_pos_web_main.jpg" alt="uzh logo" height="80" width="231"></a>
+    </div>
+  </div>
+  <div class="floatclear"><!----></div>
+  <div class="contcol2wide">
+
+
+        <center>
+
+
+<!-- [               Seitenkopf                                                ] -->
+
+         <table border="0" cellpadding="0" cellspacing="0" width="800">
+
+
+
+
+
+<!-- [               BEGIN INCLUDE mb101header.htm                             ] -->
+
+<!-- [               JavaScript - neuesFenster                                 ] -->
+
+
+
+<script type="text/javascript"><!--
+function neuesFenster(url, w, h) {window.open(url, "", "width=800,height=600,toolbar=no,scrollbars=yes")}
+--></script>
+
+
+<!-- [               UZH-Logo                                                  ] -->
+
+
+
+
+<tbody><tr>
+    <td colspan="1"></td>
+</tr>
+
+
+
+<!-- [               SEITENTITEL Übersicht über die akademischen Leistungen    ] -->
+
+  <tr><td class="seitentitel" colspan="4">Übersicht über die akademischen Leistungen      </td></tr>
+<!-- (semester eliminiert, Leistungsübersicht als Haupttitel)
+              text        = "Modulbuchung               &nbsp;Herbstsemester 2016<br><i>Übersicht über die akademischen Leistungen      </i>" />
+-->
+
+<!-- [               HINWEISBOX 2                                              ] -->
+  <tr><td class="hinweislabel">Wichtig                                           </td><td class="hinweistext" colspan="3"><ul>
+
+
+                               <li>Zum Abmelden von den Online-Services
+müssen Sie sich mit dem «Logout»- Link (rechts oben) abmelden und
+anschliessend den Web-Browser verlassen. </li>
+                               <li>Die auf dieser Seite aufgeführten
+Angaben sind rechtlich nicht verbindlich. Kreditpunkte (Credits) und
+Noten sind vorläufige Resultate und können noch ändern.</li>
+                               <li>Alleine massgebend ist der nach jedem
+ Semesterende vom Dekanat versandte (gedruckte, schriftliche)
+Leistungsausweis mit Rechtsmittelbelehrung. </li>
+                            </ul>   </td></tr>
+
+<!-- [               HINWEIS-TEXTE ROT                                         ] -->
+
+
+<!-- [               HINWEIS-TEXTE ROT                                         ] -->
+<!--  <tr><td class="fehlertext" colspan="4">
+          Falls Sie die gewünschten Module nicht gefunden haben, erweitern Sie bitte die Suche "Suche in" mit einem anderen Haupt- / Nebenfach oder "Allen ECTS Haupt- und Nebenfächern"
+  </td></tr> -->
+
+<!-- [               FEHLERBOX                                                 ] -->
+
+
+
+
+<!-- [               FEHLERBOX                                                 ] -->
+
+
+
+
+<!-- [               Persoenliche Angaben                                      ] -->
+
+
+
+<!-- [               Ueberschrift 1 - Persoenliche Angaben                     ] -->
+        <tr><td class="titel" colspan="3">Persönliche Angaben     </td><td class="titel" style="text-align: center; width: 50px;">&nbsp;</td></tr>
+
+<!-- [               Name Vorname                                              ] -->
+        <tr><td class="datentitel">Name </td><td class="datenwert" colspan="3">Mustermann, Max</td></tr>
+
+<!-- [               Matrikelnummer                                            ] -->
+          <tr><td class="datentitel">Matrikel-Nummer</td><td class="datenwert" colspan="3">12-345-678</td></tr>
+
+<!-- [               Periode
+          <tr><td class="datentitel">Periode</td><td class="datenwert" colspan="3">Herbstsemester 2016</td></tr>           ] -->
+
+
+<!-- [               END INCLUDE mb101header.htm                               ] -->
+
+
+<!-- [               Formular                                                  ] -->
+
+      <input disabled="disabled" id="htmlb_first_form_id" name="htmlb_first_form_id" value="htmlb_form_1" type="hidden"><form id="htmlb_form_1" name="htmlb_form_1" method="POST" autocomplete="off"></form><input name="htmlbScrollX" type="hidden"><input name="htmlbScrollY" type="hidden"><input name="htmlbevt_ty" type="hidden"><input name="htmlbdoc_id" value="" type="hidden"><input name="htmlbevt_frm" id="htmlbevt_frm" value="htmlb_form_1" type="hidden"><input name="htmlbevt_oid" type="hidden"><input name="htmlbevt_id" type="hidden"><input name="htmlbevt_cnt" type="hidden"><input name="htmlbevt_par1" type="hidden"><input name="htmlbevt_par2" type="hidden"><input name="htmlbevt_par3" type="hidden"><input name="htmlbevt_par4" type="hidden"><input name="htmlbevt_par5" type="hidden"><input name="htmlbevt_par6" type="hidden"><input name="htmlbevt_par7" type="hidden"><input name="htmlbevt_par8" type="hidden"><input name="htmlbevt_par9" type="hidden"><input name="onInputProcessing" value="htmlb" type="hidden"><input name="htmlb_form_1_complete" id="htmlb_form_1_complete" code="OK" type="hidden"><input name="sap-htmlb-design" id="sap-htmlb-design" value="" type="hidden">
+
+<!-- [               SUBMIT BUTTONS                                            ] -->
+
+        <tr><td class="buttons" colspan="3" align="right" nowrap="nowrap">
+
+
+
+           &nbsp;
+
+<!--          <a onMouseOver='return true;' href="javascript:void(0)" onClick="return htmlbSL(this,2,'but_back:but_back')" class="sapBtnStd" id="but_back"><nobr>Logout                     </nobr></a>
+-->
+             <!-- UNA12032014: MAR: and not... -->
+            <a onmouseover="return true;" href="javascript:void(0)" onclick="return htmlbSL(this,2,'but_go_storno:but_go_storno')" class="sapBtnStd" id="but_go_storno"><nobr>Stornierung           </nobr></a>
+
+
+
+                 <a onmouseover="return true;" href="javascript:void(0)" onclick="return htmlbSL(this,2,'but_go_suchen:but_go_suchen')" class="sapBtnStd" id="but_go_suchen"><nobr>Modulbuchung           </nobr></a>
+
+
+
+        </td><td class="buttons" style="width: 50px;" align="center">&nbsp;</td></tr>
+
+
+<!-- [               Ueberschrift 2A - Auswahl Studiengang im Fall Studienabschluss
+
+                     auskommentiert
+
+        <tr><td class="titel2" colspan="3">Bitte wählen Sie den abzuschliessenden Studiengang</td><td class="titel2" style="text-align: center; width: 50px;">&nbsp;</td></tr>
+] -->
+<!-- [               Studiengang
+
+        <tr><td class="daten" colspan="4">
+
+        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td nowrap style="padding-left: 4px;"><nobr>
+              Studiengang:&nbsp;
+
+
+          <select name="DRO_STUDIENGANG" id="DRO_STUDIENGANG" style="width:290px" class="sapDdlWhl"><option value="50503822" selected>Bachelor of Science Faculty of Science</option></select>
+        </td></tr>
+        </nobr></td>
+         </tr>
+        </table>
+] -->
+
+
+
+<!-- [               Ueberschrift 2 - Akademische Leistungen                   ] -->
+
+        <tr><td class="titel" colspan="3">Akademische Leistungen     </td><td class="titel" style="text-align: center; width: 50px;">&nbsp;</td></tr>
+
+
+<!-- [               HINWEISBOX                                                ] -->
+
+  <tr><td colspan="4"><img alt="" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/1x1.gif" border="0" height="4" width="800"></td></tr>
+
+  <tr><td class="hinweislabel">Hinweise          </td><td class="hinweistext" colspan="3"><ul>
+
+
+                               <li>Auf dieser Leistungsübersicht werden
+die von Ihnen gebuchten, abgeschlossenen oder stornierten Studienmodule
+sowie die angerechneten externen Leistungen angezeigt.</li>
+                               <li>Externe Leistungen (z.B. ETH Zürich),
+ Sprachkurse etc. werden nicht immer sofort erfasst. Bitte melden sie
+sich erst, wenn diese Leistungen auf dem offiziellen Leistungsausweis
+fehlen.</li>
+<!--                           <li>Module, die mit dem <a href="https://www.uzh.ch/mnf/modulbuchung/" target="_blank">MNF/PHF-Buchungstool</a> gebucht wurden, sind hier erst verzögert (nach Ablauf der Buchungs- und Stornofristen) ersichtlich.</li>   -->
+                               </ul>   </td></tr>
+  <tr><td colspan="4"><img alt="" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/1x1.gif" border="0" height="10" width="800"></td></tr>
+
+
+<!-- [               Filterzeile                                                ] -->
+
+       <tr><td class="daten" colspan="4">
+
+       <table border="0" cellpadding="0" cellspacing="0" width="100%">
+
+           <tbody><tr>
+
+<!-- [               Dropdown Akad. Jahr (Filter)                              ] -->
+
+              <td style="padding-left: 4px;" nowrap="nowrap"><nobr>
+              Jahr:&nbsp;
+             <select name="DRO_FILTERAKADJAHR" id="DRO_FILTERAKADJAHR" style="width:200px" class="sapDdlWhl"><option value="9999" selected="selected">Alle</option><option value="2016">WS2007/08 u. SS2008</option><option value="2015">WS2015/16 u. SS2016</option><option value="2014">WS2014/15 u. SS2015</option></select>
+              </nobr></td>
+
+<!-- [               Dropdown Akad. Periode (Filter) (auskommentiert)
+
+           <td nowrap style="padding-left: 4px;"><nobr>
+           Semester:&nbsp;
+           <select name="DRO_FILTERAKADPER" id="DRO_FILTERAKADPER" style="width:200px" class="sapDdlWhl"></select>
+
+           </nobr></td>                                                        ] -->
+
+<!-- [               Checkbox stornierte anzeigen (Filter)                     ] -->
+
+           <td style="padding-left: 4px;" nowrap="nowrap"><nobr>
+           <table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:15px;"><input class="sapCbgBox" name="CHB_STORNANZEIG" id="CHB_STORNANZEIG" checked="checked" value="X" type="checkbox"></td><td class="sapCbgTxt" nowrap="nowrap"><label for="CHB_STORNANZEIG" class="sapTxtStd">Auch stornierte Module anzeigen    </label></td></tr></tbody></table>
+           </nobr></td>
+
+         </tr>
+        </tbody></table>
+        </td></tr>
+
+<!-- [               Button Refresh (Filter)                                   ] -->
+
+           <tr><td class="button" colspan="3" align="right" nowrap="nowrap">
+
+            <a onmouseover="return true;" href="javascript:void(0)" onclick="return htmlbSL(this,2,'but_refresh:but_refresh')" class="sapBtnStd" id="but_refresh"><nobr>Auswahl aktualisieren</nobr></a>
+
+           </td><td class="button" style="width: 50px;" align="center">&nbsp;</td></tr>
+
+           <tr><td colspan="4"><img alt="" src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/1x1.gif" border="0" height="10" width="800"></td></tr>
+
+<!-- [               Ueberschrift 2B - Suchresultate (auskommentiert)
+
+        <tr><td class="titel2" colspan="3">Suchresultate   </td><td class="titel2" style="text-align: center; width: 50px;"><a onclick="neuesFenster(this.href, 480, 480); return false " href="mb101i_suchresultate.htm" > <img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/infoicon.gif" border="0" alt="zusätzliche Information" ></a></td></tr>
+
+                                                                               ] -->
+
+<!-- [               akademische Leistungen anzeigen                           ] -->
+
+        <tr><td colspan="4">
+            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+            <tbody><tr>
+                <th class="reskopfLeft">Modul          </th>
+                <th class="reskopf">VVZ-Nr.     </th>
+                <th class="reskopf">Beschreibung          </th>
+                <th class="reskopf">Credits<br>gebucht            </th>
+                <th class="reskopf">Buchung<br>Datum<br>Status             </th>
+                <th class="reskopf">&nbsp;</th>
+                <th class="reskopf">&nbsp;</th>
+                <th class="reskopf">Storno<br>Datum<br>Grund            </th>
+                <th class="reskopf">Credits<br>erworben          </th>
+                <th class="reskopf">Note                          </th>
+            </tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">GEO771&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"><a onclick="neuesFenster(this.href, 480, 480); return false;" href="http://www.vorlesungen.uzh.ch/HS15/suche/sm-50379938.modveranst.html"> GEO 771 Einführung in die Informationskompetenz: Onlinerecherche</a>&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             1.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">29.09.2015<br>Booking Cancelled&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_ston.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">29.09.2015<br>Abmeldung innerhalb Frist&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">MAT182&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"><a onclick="neuesFenster(this.href, 480, 480); return false;" href="http://www.vorlesungen.uzh.ch/HS14/suche/sm-50026110.modveranst.html"> MAT 182 Analysis für die Naturwissenschaften</a>&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             6.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">07.08.2014<br>Booking Cancelled&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_ston.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">14.08.2014<br>Abmeldung innerhalb Frist&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">GEO361&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"><a onclick="neuesFenster(this.href, 480, 480); return false;" href="http://www.vorlesungen.uzh.ch/HS16/suche/sm-50740451.modveranst.html"> GEO 361 Vertiefung Humangeographie Va (Projektseminar A)</a>&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             5.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">11.08.2016<br>Booked&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_bokd.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">GEO361&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;">Veranst. Gruppe&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/1x1.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklUnten" style="width:100px;border-left: #C8CED4 1px solid;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:50px; text-align: right; padding-right: 5px;">3743&nbsp;</td><td class="datenDnklUnten" style="width:175px;"> Vertiefung Humangeographie: Forschungsseminar A Vorlesung&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:100px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:100px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklUnten" style="width:100px;border-left: #C8CED4 1px solid;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:50px; text-align: right; padding-right: 5px;">3744&nbsp;</td><td class="datenDnklUnten" style="width:175px;">Vertiefung Humangeographie, Exkursion&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:100px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:100px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklUnten" style="width:75px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">_Spaba1&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"> Curso básico A1.1 (Spanisch)&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             2.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">16.06.2016<br>Completed with Success&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             2.00&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">5.50&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">AOEC0004&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"><a onclick="neuesFenster(this.href, 480, 480); return false;" href="http://www.vorlesungen.uzh.ch/FS16/suche/sm-50030855.modveranst.html"> Betriebswirtschaftslehre II (V + Ü) (Business Administration II)</a>&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             6.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">19.01.2016<br>Completed with Success&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             6.00&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">4.50&nbsp;</td></tr>
+
+
+          <tr style="font-size: 80%;"><td class="datenDnklObenLeft" style="width:100px; border-left: #C8CED4 1px solid;">GEO111&nbsp;</td><td class="datenDnklOben" style="width:50px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:175px;"><a onclick="neuesFenster(this.href, 480, 480); return false;" href="http://www.vorlesungen.uzh.ch/HS14/suche/sm-50451993.modveranst.html"> GEO 111 Physische Geographie I</a>&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             6.00&nbsp;</td><td class="datenDnklOben" style="width:100px;">07.08.2014<br>Completed with Success&nbsp;</td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;"><img src="/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif" &nbsp;<="" td=""></td><td class="datenDnklOben" style="width:25px; text-align: right; padding-right: 5px;">&nbsp;&nbsp;</td><td class="datenDnklOben" style="width:100px;">&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">             6.00&nbsp;</td><td class="datenDnklOben" style="width:70px; text-align: right; padding-right: 5px;">4.00&nbsp;</td></tr>
+
+
+
+            </tbody></table>
+        </td></tr>
+
+
+<!-- [               Button Details drucken                                   ] -->
+           <tr><td class="button" colspan="3" align="right" nowrap="nowrap">
+
+            <a onmouseover="return true;" href="javascript:void(0)" onclick="htmlbEF('htmlbevent.returnValue\x3dfalse\x3bwindow.open\x28\x27mb108.do\x27\x29');return htmlbEventCO(this,'click','htmlb:button:click:null','htmlb_form_1','but_prt_details','',0);" class="sapBtnStd" id="but_prt_details"><nobr>Details (Druckvorschau)</nobr></a>
+
+ </td><td class="button" style="width: 50px;" align="center">&nbsp;</td></tr>
+        <tr><td class="buttons" colspan="3" align="right" nowrap="nowrap"> &nbsp;
+        </td><td class="buttons" style="width: 50px;" align="center">&nbsp;</td></tr>
+
+
+
+      </tbody></table>
+      </center>
+
+
+  </div>
+</div>
+
+    <div onmouseout="checkCalPosition(event)" id="sapDate" style="position:absolute; width:140px; height:140px; left:-150; top:-150; z-index:400;"></div><!--153752 -->
+<script language="JavaScript">
+function sapOnResize(){;}window.onresize=sapOnResize;
+</script><!--153752 -->
+
+</body></html>

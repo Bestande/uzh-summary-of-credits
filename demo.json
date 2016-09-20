@@ -74,6 +74,17 @@
 					]
 				},
 				{
+					"module": "_Spaba1",
+					"name": "Curso básico A1.1 (Spanisch)",
+					"short_name": "Curso básico A1.1",
+					"link": "http://www.vorlesungen.uzh.ch/FS16/suche/e-50779437.details.html#1",
+					"credits_worth": 2,
+					"status": "PASSED",
+					"credits_received": 2,
+					"grade": "5.50",
+					"paths": []
+				},
+				{
 					"module": "BINF3102",
 					"name": "Wiederholungsprüfung: Wirtschaftsinformatik (Re-examination: Business Informatics)",
 					"short_name": "Wirtschaftsinformatik",

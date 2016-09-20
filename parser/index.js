@@ -3,6 +3,7 @@ var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 var getShortName = require('@jonny/uzh-course-shortname');
 var uzhSemesters = require('@jonny/uzh-semesters');
+var uzhCoursesWithoutModule = require('uzh-courses-with-no-module');
 
 var getStatus = function (d) {
 	if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif') {
@@ -60,11 +61,48 @@ exports.filterDuplicates = function (credits) {
 	return credits;
 };
 
+const getNativeLinkFromRow = row => {
+	if (!row.children[2].children) {
+		return null;
+	}
+	if (!row.children[2].children[0].attribs) {
+		return null;
+	}
+	return row.children[2].children[0].attribs.href;
+};
+const getSemesterForRow = row => {
+	if (!row) {
+		return 'HS16';
+	}
+	let match = cheerio(row).html().match(uzhSemesters.regex);
+	if (!match) {
+		return 'HS16';
+	}
+	return match[1];
+};
+
+const getLinkFromRow = (row, nextrow) => {
+	const nativeLink = getNativeLinkFromRow(row);
+	if (nativeLink) {
+		return nativeLink;
+	}
+	const identifier = cheerio(row.children[0]).text().trim();
+	const semester = getSemesterForRow(nextrow);
+	const dataset = uzhCoursesWithoutModule.data[semester];
+	if (!dataset) {
+		return null;
+	}
+	if (!dataset[identifier]) {
+		return null;
+	}
+	return `http://www.vorlesungen.uzh.ch/${semester}/suche/e-${dataset[identifier][0]}.details.html`;
+};
+
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
 	let rows = $('table').last().find('tr');
-	rows = _.map(rows, function (row) {
-		if (row.type === 'tag' && row.name === 'tr' && row.children[0].name) {
+	rows = _.map(rows, function (row, i) {
+		if (row.type === 'tag' && row.name === 'tr' && row.children[3].name && $(row.children[3]).text().trim() !== '' && $(row.children[3]).text().trim() !== 'VVZ-Nr.') {
 			var grade;
 			try {
 				grade = $(row.children[9].children[0]).text().trim();
@@ -74,9 +112,9 @@ exports.fromHTML = function (html) {
 			/* eslint-disable camelcase */
 			return {
 				module: $(row.children[0].children[0]).text().trim(),
-				name: $(row.children[2].children[0].children[0]).text().trim(),
-				short_name: getShortName($(row.children[2].children[0].children[0]).text().trim()),
-				link: unescape(row.children[2].children[0].attribs.href).trim(),
+				name: $(row.children[2].children[0]).text().trim(),
+				short_name: getShortName($(row.children[2].children[0]).text().trim()),
+				link: unescape(getLinkFromRow(row, rows[i + 1])).trim(),
 				credits_worth: parseFloat($(row.children[3].children[0]).text().trim()) || 0,
 				status: getStatus(row.children[5].children[0]),
 				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
@@ -86,6 +124,7 @@ exports.fromHTML = function (html) {
 		}
 	});
 	rows = _.compact(rows);
+	rows = _.filter(rows, r => r.link);
 	rows = exports.filterDuplicates(rows);
 	return rows;
 };

@@ -22,14 +22,15 @@
   ],
   "dependencies": {
     "@jonny/uzh-course-shortname": "^1.0.10",
-    "@jonny/uzh-semesters": "^1.1.0",
+    "@jonny/uzh-semesters": "^1.2.0",
     "cheerio-without-node-native": "^0.20.0",
     "co": "^4.6.0",
     "es6-denodeify": "^0.1.5",
     "node-fetch": "^1.5.3",
     "real-isomorphic-fetch": "^1.2.0",
     "sqlite3": "^3.1.4",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+    "uzh-courses-with-no-module": "^0.4.0"
   },
   "devDependencies": {
     "ava": "^0.15.1",
