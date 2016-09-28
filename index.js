@@ -25,7 +25,7 @@ function all(username, password, fetch, feedback) {
 		let identity = {
 			name: personal.getName(result.html),
 			matriculateNumber: personal.getMatriculateNumber(result.html)
-		}
+		};
 		return {
 			stats,
 			directions,
