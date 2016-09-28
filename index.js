@@ -30,7 +30,7 @@ function all(username, password, fetch, feedback) {
 			stats,
 			directions,
 			credits,
-			identity
+			identity,
 			success: true,
 			version: 5
 		};
