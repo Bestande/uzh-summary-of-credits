@@ -22,12 +22,17 @@ function all(username, password, fetch, feedback) {
 		let credits = parser.fromHTML(result.html);
 		let stats = statsCalculator.calculate(credits);
 		let directions = personal.getStudyDirection(result.html);
+		let identity = {
+			name: personal.getName(result.html),
+			matriculateNumber: personal.getMatriculateNumber(result.html)
+		}
 		return {
 			stats,
 			directions,
 			credits,
+			identity
 			success: true,
-			version: 4
+			version: 5
 		};
 	});
 }

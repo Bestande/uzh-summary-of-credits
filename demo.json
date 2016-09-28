@@ -1,9 +1,13 @@
 {
 	"demo": true,
-	"version": 3,
+	"version": 5,
 	"stats": {
 		"total_credits": 131.5,
 		"weighted_average": 4.76
+	},
+	"identity": {
+		"name": "Mustermann, Max",
+		"matriculateNumber": "12-345-678"
 	},
 	"directions": [
 		{
