@@ -100,6 +100,12 @@ let fourthRequest = function (body, fetch) {
 			}
 			data[input.attribs.name] = input.attribs.value;
 		});
+		try {
+			let a = $('form')[0].attribs.action;
+			a = '';
+		} catch (err) {
+			return reject(new Error('Der UZH-Server hat eine unbekannte Antwort gegeben. Du kannst uns unter info@bestande.ch kontaktieren.'));
+		}
 		fetch($('form')[0].attribs.action, {
 			method: 'POST',
 			body: qs.stringify(data),
