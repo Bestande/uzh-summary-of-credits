@@ -101,8 +101,7 @@ let fourthRequest = function (body, fetch) {
 			data[input.attribs.name] = input.attribs.value;
 		});
 		try {
-			let a = $('form')[0].attribs.action;
-			a = '';
+			let a = $('form')[0].attribs.action; // eslint-disable-line no-unused-vars
 		} catch (err) {
 			return reject(new Error('Der UZH-Server hat eine unbekannte Antwort gegeben. Du kannst uns unter info@bestande.ch kontaktieren.'));
 		}
