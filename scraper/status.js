@@ -4,5 +4,8 @@ module.exports = {
 	},
 	usernameUnknown: (html) => {
 		return (html.indexOf('The username you entered cannot be identified') > -1 || html.indexOf('Das Passwort ist falsch') > -1);
+	},
+	isStale: html => {
+		return html.indexOf('Stale Request') > -1;
 	}
 };

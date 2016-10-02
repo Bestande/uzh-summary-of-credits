@@ -138,6 +138,9 @@ exports.get = (username, password, fetch, feedback) => {
 			if (status.usernameUnknown(body)) {
 				return reject(new Error('USERNAME_UNKNOWN'));
 			}
+			if (status.isStale(body)) {
+				return reject(new Error('STALE_REQUEST'));
+			}
 			return thirdRequest(body, fetch);
 		})
 		.then(function (html) {
