@@ -110,11 +110,12 @@ exports.fromHTML = function (html) {
 				grade = 'BEST';
 			}
 			/* eslint-disable camelcase */
+			const link = getLinkFromRow(row, rows[i + 1]);
 			return {
 				module: $(row.children[0].children[0]).text().trim(),
 				name: $(row.children[2].children[0]).text().trim(),
 				short_name: getShortName($(row.children[2].children[0]).text().trim()),
-				link: unescape(getLinkFromRow(row, rows[i + 1])).trim(),
+				link: link && unescape(link).trim(),
 				credits_worth: parseFloat($(row.children[3].children[0]).text().trim()) || 0,
 				status: getStatus(row.children[5].children[0]),
 				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
