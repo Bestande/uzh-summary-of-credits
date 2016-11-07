@@ -98,6 +98,16 @@ const getLinkFromRow = (row, nextrow) => {
 	return `http://www.vorlesungen.uzh.ch/${semester}/suche/e-${dataset[identifier][0]}.details.html`;
 };
 
+const formatLink = link => {
+	let match = link.match(/\/details\/([0-9]{4})\/(003|004)\/SM\/([0-9]+)/);
+	if (!match) {
+		return link;
+	}
+	let [full, year, semester, moduleid] = match;
+	let semestercode = semester === '003' ? 'HS' : 'FS';
+	return `http://www.vorlesungen.uzh.ch/${semestercode}${year.substr(2,2)}/suche/sm-${moduleid}.modveranst.html`;
+};
+
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
 	let rows = $('table').last().find('tr');
@@ -115,7 +125,7 @@ exports.fromHTML = function (html) {
 				module: $(row.children[0].children[0]).text().trim(),
 				name: $(row.children[2].children[0]).text().trim(),
 				short_name: getShortName($(row.children[2].children[0]).text().trim()),
-				link: link && unescape(link).trim(),
+				link: link && formatLink(unescape(link).trim()),
 				credits_worth: parseFloat($(row.children[3].children[0]).text().trim()) || 0,
 				status: getStatus(row.children[5].children[0]),
 				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
