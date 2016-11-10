@@ -3,7 +3,6 @@ var cheerio = require('cheerio-without-node-native');
 var _ = require('underscore');
 var getShortName = require('@jonny/uzh-course-shortname');
 var uzhSemesters = require('@jonny/uzh-semesters');
-var uzhCoursesWithoutModule = require('uzh-courses-with-no-module');
 
 var getStatus = function (d) {
 	if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_s_okay.gif') {
@@ -55,7 +54,9 @@ exports.filterDuplicates = function (credits) {
 		return true;
 	});
 	credits = credits.map((credit, index) => {
-		credit.link += '#' + index;
+		if (credit.link) {
+			credit.link += '#' + index;
+		}
 		return credit;
 	});
 	return credits;
@@ -70,33 +71,6 @@ const getNativeLinkFromRow = row => {
 	}
 	return row.children[2].children[0].attribs.href;
 };
-const getSemesterForRow = row => {
-	if (!row) {
-		return 'HS16';
-	}
-	let match = cheerio(row).html().match(uzhSemesters.regex);
-	if (!match) {
-		return 'HS16';
-	}
-	return match[1];
-};
-
-const getLinkFromRow = (row, nextrow) => {
-	const nativeLink = getNativeLinkFromRow(row);
-	if (nativeLink) {
-		return nativeLink;
-	}
-	const identifier = cheerio(row.children[0]).text().trim();
-	const semester = getSemesterForRow(nextrow);
-	const dataset = uzhCoursesWithoutModule.data[semester];
-	if (!dataset) {
-		return null;
-	}
-	if (!dataset[identifier]) {
-		return null;
-	}
-	return `http://www.vorlesungen.uzh.ch/${semester}/suche/e-${dataset[identifier][0]}.details.html`;
-};
 
 exports.formatLink = link => {
 	let match = link.match(/\/details\/([0-9]{4})\/(003|004)\/SM\/([0-9]+)/);
@@ -109,34 +83,39 @@ exports.formatLink = link => {
 	return `http://www.vorlesungen.uzh.ch/${semestercode}${year}/suche/sm-${moduleid}.modveranst.html`;
 };
 
+const getRow = row => {
+	if (row.type === 'tag' &&
+		row.name === 'tr' &&
+		row.children[3].name &&
+		cheerio(row.children[3]).text().trim() !== '' &&
+		cheerio(row.children[3]).text().trim() !== 'VVZ-Nr.'
+	) {
+		var grade;
+		try {
+			grade = cheerio.load(row.children[9].children[0]).text().trim();
+		} catch (e) {
+			grade = 'BEST';
+		}
+		/* eslint-disable camelcase */
+		const link = getNativeLinkFromRow(row);
+		return {
+			module: cheerio(row.children[0].children[0]).text().trim(),
+			name: cheerio(row.children[2].children[0]).text().trim(),
+			short_name: getShortName(cheerio(row.children[2].children[0]).text().trim()),
+			link: link && exports.formatLink(unescape(link).trim()),
+			credits_worth: parseFloat(cheerio(row.children[3].children[0]).text().trim()) || 0,
+			status: getStatus(row.children[5].children[0]),
+			credits_received: parseFloat(cheerio(row.children[8].children[0]).text().trim()) || 0,
+			grade
+		};
+		/* eslint-enable camelcase */
+	}
+};
+
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
 	let rows = $('table').last().find('tr');
-	rows = _.map(rows, function (row, i) {
-		if (row.type === 'tag' && row.name === 'tr' && row.children[3].name && $(row.children[3]).text().trim() !== '' && $(row.children[3]).text().trim() !== 'VVZ-Nr.') {
-			var grade;
-			try {
-				grade = $(row.children[9].children[0]).text().trim();
-			} catch (e) {
-				grade = 'BEST';
-			}
-			/* eslint-disable camelcase */
-			const link = getLinkFromRow(row, rows[i + 1]);
-			return {
-				module: $(row.children[0].children[0]).text().trim(),
-				name: $(row.children[2].children[0]).text().trim(),
-				short_name: getShortName($(row.children[2].children[0]).text().trim()),
-				link: link && exports.formatLink(unescape(link).trim()),
-				credits_worth: parseFloat($(row.children[3].children[0]).text().trim()) || 0,
-				status: getStatus(row.children[5].children[0]),
-				credits_received: parseFloat($(row.children[8].children[0]).text().trim()) || 0,
-				grade: grade
-			};
-			/* eslint-enable camelcase */
-		}
-	});
-	rows = _.compact(rows);
-	rows = _.filter(rows, r => r.link);
+	rows = Array.prototype.map.call(rows, getRow).filter(Boolean);
 	rows = exports.filterDuplicates(rows);
 	return rows;
 };

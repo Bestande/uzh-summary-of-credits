@@ -28,8 +28,7 @@
     "es6-denodeify": "^0.1.5",
     "node-fetch": "^1.5.3",
     "real-isomorphic-fetch": "^1.2.0",
-    "underscore": "^1.8.3",
-    "uzh-courses-with-no-module": "^0.4.0"
+    "underscore": "^1.8.3"
   },
   "devDependencies": {
     "ava": "^0.15.1",
