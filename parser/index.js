@@ -46,7 +46,7 @@ exports.filterDuplicates = function (credits) {
 		return 4;
 	});
 	credits = credits.filter(credit => {
-		var key = credit.link + credit.status;
+		var key = credit.link + credit.status + credit.name;
 		if (keys.indexOf(key) > -1) {
 			return false;
 		}
@@ -100,8 +100,8 @@ const getRow = row => {
 		const link = getNativeLinkFromRow(row);
 		return {
 			module: cheerio(row.children[0].children[0]).text().trim(),
-			name: cheerio(row.children[2].children[0]).text().trim(),
-			short_name: getShortName(cheerio(row.children[2].children[0]).text().trim()),
+			name: cheerio(row.children[2]).text().trim(),
+			short_name: getShortName(cheerio(row.children[2]).text().trim()),
 			link: link && exports.formatLink(unescape(link).trim()),
 			credits_worth: parseFloat(cheerio(row.children[3].children[0]).text().trim()) || 0,
 			status: getStatus(row.children[5].children[0]),
