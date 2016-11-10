@@ -92,7 +92,7 @@ const getRow = row => {
 	) {
 		var grade;
 		try {
-			grade = cheerio.load(row.children[9].children[0]).text().trim();
+			grade = cheerio(row.children[9].children[0]).text().trim();
 		} catch (e) {
 			grade = 'BEST';
 		}
