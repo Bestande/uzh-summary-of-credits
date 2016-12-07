@@ -96,8 +96,11 @@ const getRow = row => {
 		} catch (e) {
 			grade = 'BEST';
 		}
-		/* eslint-disable camelcase */
 		const link = getNativeLinkFromRow(row);
+		if (!row.children[0] || !row.children[0].children) {
+			return null;
+		}
+		/* eslint-disable camelcase */
 		return {
 			module: cheerio(row.children[0].children[0]).text().trim(),
 			name: cheerio(row.children[2]).text().trim(),
