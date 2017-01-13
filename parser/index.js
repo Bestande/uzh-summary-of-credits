@@ -14,6 +14,12 @@ var getStatus = function (d) {
 	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_bokd.gif') {
 		return 'BOOKED';
 	}
+	if (d.name) {
+		console.log('Unknown status', d.name);
+	}
+	if (d.attribs.src) {
+		console.log('Unknown status', d.attribs.src);
+	}
 	return 'UNKNOWN';
 };
 
