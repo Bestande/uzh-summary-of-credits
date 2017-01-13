@@ -90,6 +90,9 @@ exports.formatLink = link => {
 };
 
 const getRow = row => {
+	if (row.type === 'tag' && row.name === 'tr' && row.children && !row.children[3]) {
+		throw new Error('Leistungen konnten nicht gelesen werden');
+	}
 	if (row.type === 'tag' &&
 		row.name === 'tr' &&
 		row.children[3].name &&
