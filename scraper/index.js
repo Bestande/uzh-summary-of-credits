@@ -20,6 +20,9 @@ let firstRequest = function (fetch) {
 				return reject(new Error('Anfrage wurde blockiert'));
 			}
 			var url = body.match(/action="(.*?)"/);
+			if (!url) {
+				throw new Error(`URL has no action: ${url}`);
+			}
 			resolve(url[1]);
 		})
 		.catch(reject);
