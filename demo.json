@@ -21,6 +21,26 @@
 	],
 	"credits": [
 		{
+			"module":"251011a",
+			"name":"011a Methodengrundlagen HF (2 Semester)",
+			"short_name":"Methodengrundlagen HF",
+			"link":"http://www.vorlesungen.uzh.ch/HS16/suche/sm-50323370.modveranst.html#10",
+			"credits_worth":16,
+			"status":"CONTINUE",
+			"credits_received":0,
+			"grade":"W",
+			"paths":[
+				[
+					"50000007",
+					"50306208",
+					"50306208140",
+					"50309346",
+					"50319647"
+				]
+			],
+			"direction":"50306208"
+		},
+		{
 			"semester": "FS16",
 			"credits": [
 				{

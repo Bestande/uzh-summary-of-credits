@@ -13,6 +13,8 @@ var getStatus = function (d) {
 		return 'FAILED';
 	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/s_b_bokd.gif') {
 		return 'BOOKED';
+	} else if (d.name === 'img' && d.attribs.src === '/sap/bc/bsp/sap/PUBLIC/z_studium/imgs/1x1.gif') {
+		return 'CONTINUE';
 	}
 	if (d.name) {
 		console.log('Unknown status', d.name);
