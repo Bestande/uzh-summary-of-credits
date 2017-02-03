@@ -299,12 +299,7 @@
 					"status": "PASSED",
 					"credits_received": 6,
 					"grade": "5.00"
-				}
-			]
-		},
-		{
-			"semester": "HS13",
-			"credits": [
+				},
 				{
 					"module": "AINF1161",
 					"name": "Informatik im Unternehmen (V) (Informatics for Organizations)",
