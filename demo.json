@@ -359,9 +359,6 @@
 					"status": "FAILED",
 					"credits_received": 0,
 					"grade": "3.00"
-				}
-			]
-		}
-	],
+				}	],
 	"success": true
 }
