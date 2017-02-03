@@ -1,6 +1,6 @@
 {
   "name": "@jonny/uzh-summary-of-credits",
-  "version": "5.9.1",
+  "version": "5.10.0",
   "description": "Fetch the UZH summary of credits (Leistungsübersicht)",
   "license": "MIT",
   "repository": "JonnyBurger/uzh-summary-of-credits",
