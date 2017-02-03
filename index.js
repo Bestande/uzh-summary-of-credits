@@ -32,7 +32,7 @@ function all(username, password, fetch, feedback) {
 			credits,
 			identity,
 			success: true,
-			version: 5
+			version: 6
 		};
 	});
 }
