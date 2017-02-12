@@ -81,14 +81,14 @@ const getNativeLinkFromRow = row => {
 };
 
 exports.formatLink = link => {
-	let match = link.match(/\/details\/([0-9]{4})\/(003|004)\/SM\/([0-9]+)/);
+	let match = link.match(/\/details\/([0-9]{4})\/(003|004)\/(SM|CW)\/([0-9]+)/);
 	if (!match) {
 		return link;
 	}
-	let [, year, semester, moduleid] = match;
+	let [, year, semester, type, moduleid] = match;
 	let semestercode = semester === '003' ? 'HS' : 'FS';
 	year = semestercode === 'HS' ? parseInt(year.substr(2, 2), 10) : parseInt(year.substr(2, 2), 10) + 1;
-	return `http://www.vorlesungen.uzh.ch/${semestercode}${year}/suche/sm-${moduleid}.modveranst.html`;
+	return `http://www.vorlesungen.uzh.ch/${semestercode}${year}/suche/${type.toLowerCase()}-${moduleid}.modveranst.html`;
 };
 
 const getRow = row => {

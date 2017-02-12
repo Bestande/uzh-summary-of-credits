@@ -21,6 +21,15 @@
 	],
 	"credits": [
 				{
+					"module": "SPZEscba",
+					"name": "Español: Curso basico A2.1 (Sprachenzentrum der Universität und der ETH Zürich)",
+					"short_name": "Español",
+					"link": "https://studentservices.uzh.ch/anonym/vvz?sap-client001&sap-language=DE#/details/2016/003/CW/50441681",
+					"credits_worth": 2,
+					"credits_received": 2,
+					"grade": 4.75
+				},
+				{
 					"module":"251011a",
 					"name":"011a Methodengrundlagen HF (2 Semester)",
 					"short_name":"Methodengrundlagen HF",
