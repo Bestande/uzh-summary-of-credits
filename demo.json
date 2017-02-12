@@ -27,7 +27,8 @@
 					"link": "https://studentservices.uzh.ch/anonym/vvz?sap-client001&sap-language=DE#/details/2016/003/CW/50441681",
 					"credits_worth": 2,
 					"credits_received": 2,
-					"grade": 4.75
+					"grade": 4.75,
+					"status": "PASSED"
 				},
 				{
 					"module":"251011a",
