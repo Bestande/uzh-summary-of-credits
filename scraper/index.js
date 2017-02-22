@@ -8,9 +8,33 @@ let IsomorphicFetch = require('real-isomorphic-fetch');
 const config = require('./const.js');
 var status = require('./status.js');
 
-let firstRequest = function (fetch) {
+const makeShibbolethUrl = server => {
+	return `https://${server}/Shibboleth.sso/DS?providerId=https%3A%2F%2Faai-idp.uzh.ch%2Fidp%2Fshibboleth&target=https%3A%2F%2F${server}%2Fuzh%2Fworld%2Fcm%2Fstudium%2Fzcm_svmb1a%2Fmb101.do`;
+};
+
+const getRandomServer = () => {
+	const servers = ['idaps1.uzh.ch', 'idaps2.uzh.ch'];
+	return servers[Math.floor(Math.random() * servers.length)];
+};
+
+let zerothRequest = function (fetch) {
+	return new Promise(function (resolve) {
+		fetch('http://idagreen.uzh.ch/re/')
+		.then(response => response.text())
+		.then(body => {
+			const match = body.match(/var\sserver\s=\s\"([0-9a-zA-Z\.]+)"/);
+			if (match) {
+				return resolve(makeShibbolethUrl(match[1]));
+			}
+			return resolve(makeShibbolethUrl(getRandomServer()));
+		})
+		.catch(() => resolve(makeShibbolethUrl(getRandomServer())));
+	});
+};
+
+let firstRequest = function (url, fetch) {
 	return new Promise(function (resolve, reject) {
-		fetch(config.AUTH_URL, {
+		fetch(url, {
 			credentials: 'include'
 		})
 		.then(response => response.text())
@@ -127,7 +151,8 @@ exports.get = (username, password, fetch, feedback) => {
 	fetch = new IsomorphicFetch(fetch);
 	return new Promise(function (resolve, reject) {
 		feedback('Rufe uzh.ch auf...');
-		firstRequest(fetch)
+		zerothRequest(fetch)
+		.then(url => firstRequest(url, fetch))
 		.then(function (url) {
 			feedback('Einloggen...');
 			return secondRequest(fetch, username, password, url);
