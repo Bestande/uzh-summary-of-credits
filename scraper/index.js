@@ -11,7 +11,6 @@ var status = require('./status.js');
 let firstRequest = function (fetch) {
 	return new Promise(function (resolve, reject) {
 		fetch(config.AUTH_URL, {
-			redirect: 'manual',
 			credentials: 'include'
 		})
 		.then(response => response.text())
