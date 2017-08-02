@@ -21,10 +21,10 @@
 	],
 	"credits": [
 				{
-					"module": "BINFPR01",
+					"module": "BINFPR02",
 					"name": "Praktikum Datenbanksysteme BSc (Database Systems Lab BSc)",
 					"short_name": "Praktikum Datenbanksysteme BSc",
-					"link": "http://www.vorlesungen.uzh.ch/HS17/suche/sm-50499924.modveranst.html",
+					"link": "http://www.vorlesungen.uzh.ch/HS17/suche/sm-50825434.modveranst.html",
 					"credits_worth": 2,
 					"status": "PASSED",
 					"credits_received": 2,
@@ -259,16 +259,6 @@
 					"status": "PASSED",
 					"credits_received": 3,
 					"grade": "5.25"
-				},
-				{
-					"module": "AOEC0004",
-					"name": "Betriebswirtschaftslehre II (V + Ü) (Business Administration II)",
-					"short_name": "Betriebswirtschaftslehre II",
-					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030855.modveranst.html",
-					"credits_worth": 6,
-					"status": "DESELECTED",
-					"credits_received": 0,
-					"grade": ""
 				},
 				{
 					"module": "AOEC0004",
