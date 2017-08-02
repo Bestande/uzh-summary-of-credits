@@ -264,6 +264,16 @@
 					"module": "AOEC0004",
 					"name": "Betriebswirtschaftslehre II (V + Ü) (Business Administration II)",
 					"short_name": "Betriebswirtschaftslehre II",
+					"link": "http://www.vorlesungen.uzh.ch/FS15/suche/sm-50030855.modveranst.html",
+					"credits_worth": 6,
+					"status": "DESELECTED",
+					"credits_received": 0,
+					"grade": ""
+				},
+				{
+					"module": "AOEC0004",
+					"name": "Betriebswirtschaftslehre II (V + Ü) (Business Administration II)",
+					"short_name": "Betriebswirtschaftslehre II",
 					"link": "http://www.vorlesungen.uzh.ch/FS14/suche/sm-50030855.modveranst.html",
 					"credits_worth": 6,
 					"status": "PASSED",
