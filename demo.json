@@ -22,11 +22,21 @@
 	"credits": [
 				{
 					"module": "BOEC0003",
+					"name": "BIO 122 Animal Behaviour",
+					"short_name": "Animal Behaviour",
+					"link": "http://www.vorlesungen.uzh.ch/HS17/suche/sm-50031543.modveranst.html",
+					"credits_worth": 6,
+					"status": "BOOKED",
+					"credits_received": 0,
+					"grade": ""
+				},
+				{
+					"module": "BOEC0003",
 					"name": "BWL III (V+Ü) (Business Administration III)",
 					"short_name": "BWL III",
 					"link": "http://www.vorlesungen.uzh.ch/HS17/suche/sm-50046381.modveranst.html",
 					"credits_worth": 6,
-					"status": "PASSED",
+					"status": "BOOKED",
 					"credits_received": 6,
 					"grade": "4.75"
 				},
