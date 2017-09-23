@@ -150,15 +150,15 @@ let fourthRequest = function (body, fetch) {
 exports.get = (username, password, fetch, feedback) => {
 	fetch = new IsomorphicFetch(fetch);
 	return new Promise(function (resolve, reject) {
-		feedback('Rufe uzh.ch auf...');
+		feedback('CONTACT_UZH_CH');
 		zerothRequest(fetch)
 		.then(url => firstRequest(url, fetch))
 		.then(function (url) {
-			feedback('Einloggen...');
+			feedback('LOGGING_IN');
 			return secondRequest(fetch, username, password, url);
 		})
 		.then(function (body) {
-			feedback('Eingeloggt...');
+			feedback('LOGGED_IN');
 			if (status.loginFailed(body)) {
 				return reject(new Error('USERNAME_PW_WRONG'));
 			}
@@ -171,7 +171,7 @@ exports.get = (username, password, fetch, feedback) => {
 			return thirdRequest(body, fetch);
 		})
 		.then(function (html) {
-			feedback('Lade Module...');
+			feedback('LOADING_MODULES');
 			return fourthRequest(html, fetch);
 		})
 		.then(html => resolve({success: true, html}))
