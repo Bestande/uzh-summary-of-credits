@@ -7,7 +7,7 @@
   "author": {
     "name": "Jonny Burger",
     "email": "jonathanburger11@gmail.com",
-    "url": "jonny.io"
+    "url": "http://jonny.io"
   },
   "engines": {
     "node": ">=4.0.0"
@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "@jonny/uzh-course-shortname": "^1.1.0",
-    "@jonny/uzh-semesters": "^1.2.0",
+    "@jonny/uzh-semesters": "^1.2.1",
     "cheerio-without-node-native": "^0.20.0",
     "co": "^4.6.0",
     "es6-denodeify": "^0.1.5",
