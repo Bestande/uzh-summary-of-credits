@@ -26,6 +26,13 @@ var getStatus = function (d) {
 };
 
 exports.groupBySemester = function (rows) {
+	rows = rows.filter(r => {
+		let criteria = row.link && row.link.match(/.ch\/((HS|FS)[0-9]+)/)[1];
+		if (!criteria) {
+			console.log('does not have correct link', criteria);
+		}
+		return criteria;
+	});
 	rows = _.groupBy(rows, row => row.link.match(/.ch\/((HS|FS)[0-9]+)/)[1]);
 	rows = _.map(rows, (row, key) => {
 		return {
