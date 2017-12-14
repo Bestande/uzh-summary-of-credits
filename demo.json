@@ -6,7 +6,10 @@
 		"weighted_average": 4.76
 	},
 	"identity": {
-		"name": "Mustermann, Max",
+		"name": {
+			"last": "Mustermann",
+			"first": "Max"
+		},
 		"matriculateNumber": "12-345-678"
 	},
 	"directions": [
