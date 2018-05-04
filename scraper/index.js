@@ -22,7 +22,7 @@ let zerothRequest = function (fetch) {
 		fetch('http://idagreen.uzh.ch/re/')
 		.then(response => response.text())
 		.then(body => {
-			const match = body.match(/var\sserver\s=\s\"([0-9a-zA-Z\.]+)"/);
+			const match = body.match(/var\sserver\s=\s"([0-9a-zA-Z\.]+)"/);
 			if (match) {
 				return resolve(makeShibbolethUrl(match[1]));
 			}

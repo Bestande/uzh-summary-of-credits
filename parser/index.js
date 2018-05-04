@@ -26,10 +26,10 @@ var getStatus = function (d) {
 };
 
 exports.groupBySemester = function (rows) {
-	rows = rows.filter(r => {
+	rows = rows.filter(row => {
 		let criteria = row.link && row.link.match(/.ch\/((HS|FS)[0-9]+)/)[1];
 		if (!criteria) {
-			console.log('does not have correct link', criteria);
+			console.log('does not have correct link', row.link);
 		}
 		return criteria;
 	});
@@ -135,6 +135,10 @@ const getRow = row => {
 
 exports.fromHTML = function (html) {
 	let $ = cheerio.load(html);
+	const down = $('.fehlertext');
+	if (down && down.length > 0) {
+		throw new Error(`Der UZH-Server hat folgenden Fehler zurückgegeben: ${down.text()}`);
+	}
 	let rows = $('table').last().find('tr');
 	rows = Array.prototype.map.call(rows, getRow).filter(Boolean);
 	rows = exports.filterDuplicates(rows);
