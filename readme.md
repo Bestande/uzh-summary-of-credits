@@ -15,29 +15,14 @@ $ npm install --save uzh-summary-of-credits
 ```js
 const uzhSummaryOfCredits = require('uzh-summary-of-credits');
 
-uzhSummaryOfCredits('unicorns');
-//=> 'unicorns & rainbows'
+uzhSummaryOfCredits.all('joburg', '<password>', require('node-fetch'), progress => { console.log(progress) })
+.then(result => {
+   console.log(result)
+})
+.catch(err => {
+   console.log(err)
+})
 ```
-
-
-## API
-
-### uzhSummaryOfCredits(input, [options])
-
-#### input
-
-Type: `string`
-
-Lorem ipsum.
-
-#### options
-
-##### foo
-
-Type: `boolean`<br>
-Default: `false`
-
-Lorem ipsum.
 
 
 ## License
