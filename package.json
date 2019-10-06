@@ -1,14 +1,9 @@
 {
-  "name": "@jonny/uzh-summary-of-credits",
+  "name": "uzh-summary-of-credits",
   "version": "5.16.11",
   "description": "Fetch the UZH summary of credits (Leistungsübersicht)",
   "license": "MIT",
-  "repository": "JonnyBurger/uzh-summary-of-credits",
-  "author": {
-    "name": "Jonny Burger",
-    "email": "jonathanburger11@gmail.com",
-    "url": "http://jonny.io"
-  },
+  "repository": "Bestande/uzh-summary-of-credits",
   "engines": {
     "node": ">=4.0.0"
   },
