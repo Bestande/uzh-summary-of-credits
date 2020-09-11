@@ -21,7 +21,7 @@
     "cheerio-without-node-native": "^0.20.0",
     "co": "^4.6.0",
     "es6-denodeify": "^0.1.5",
-    "node-fetch": "^1.5.3",
+    "node-fetch": "^2.6.1",
     "real-isomorphic-fetch": "^1.2.0",
     "underscore": "^1.8.3"
   },
